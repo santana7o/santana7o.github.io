@@ -1,0 +1,313 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Felipe Santana | Analista de Dados</title>
+<meta name="description" content="Portfólio de Felipe Santana, Analista de Dados em São Paulo. Projetos ponta a ponta com Python, SQL, dbt, DuckDB e Tableau.">
+<meta property="og:title" content="Felipe Santana | Analista de Dados">
+<meta property="og:description" content="Projetos de dados ponta a ponta: da pergunta de negócio ao dashboard.">
+<meta property="og:image" content="https://santana7o.github.io/img/olist_visao_geral.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=Newsreader:opsz,wght@6..72,500;6..72,600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f6f4ef; --surface:#ffffff; --ink:#16181d; --muted:#5d6370; --line:#dedad0;
+  --accent:#c2410c; --accent-soft:#fbe9df; --navy:#13213a;
+  --serif:"Newsreader",Georgia,serif; --sans:"IBM Plex Sans",system-ui,sans-serif; --mono:"IBM Plex Mono",ui-monospace,monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root{--bg:#111318;--surface:#181b22;--ink:#ebe8e1;--muted:#9aa0ab;--line:#2a2e37;--accent:#f0864f;--accent-soft:#2a1c14}
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+img{display:block;max-width:100%;height:auto}
+.wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+
+/* nav */
+nav{position:sticky;top:0;z-index:10;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:60px;gap:16px}
+nav .brand{font-family:var(--mono);font-size:14px;text-decoration:none;letter-spacing:.02em}
+nav ul{display:flex;gap:24px;list-style:none;font-size:14px}
+nav ul a{text-decoration:none;color:var(--muted)}
+nav ul a:hover{color:var(--ink)}
+
+/* hero */
+header.hero{padding:96px 0 72px;border-bottom:1px solid var(--line)}
+.eyebrow{font-family:var(--mono);font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent)}
+.hero h1{font-family:var(--serif);font-weight:500;font-size:clamp(40px,6.4vw,76px);line-height:1.04;letter-spacing:-.02em;margin:18px 0 24px;max-width:15ch}
+.hero p.lead{font-size:19px;color:var(--muted);max-width:56ch}
+.hero .links{display:flex;flex-wrap:wrap;gap:12px;margin-top:36px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:11px 18px;border:1px solid var(--ink);border-radius:999px;font-size:15px;font-weight:500;text-decoration:none;transition:background .15s,color .15s}
+.btn:hover{background:var(--ink);color:var(--bg)}
+.btn.solid{background:var(--ink);color:var(--bg)}
+.btn.solid:hover{background:var(--accent);border-color:var(--accent)}
+
+/* method strip */
+.method{padding:56px 0;border-bottom:1px solid var(--line)}
+.method h2{font-family:var(--mono);font-size:13px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:24px}
+.steps{display:grid;grid-template-columns:repeat(5,1fr);gap:0;border:1px solid var(--line);border-radius:14px;overflow:hidden;background:var(--surface)}
+.step{padding:20px 18px;border-right:1px solid var(--line)}
+.step:last-child{border-right:0}
+.step b{display:block;font-family:var(--mono);font-size:12px;color:var(--accent);font-weight:500;margin-bottom:6px}
+.step span{display:block;font-weight:600;font-size:15px}
+.step small{display:block;color:var(--muted);font-size:13.5px;line-height:1.45;margin-top:4px}
+.method p.note{color:var(--muted);font-size:15px;margin-top:18px}
+
+/* projects */
+section.project{padding:88px 0;border-bottom:1px solid var(--line)}
+.p-head{display:grid;grid-template-columns:1fr auto;gap:24px;align-items:end;margin-bottom:28px}
+.p-num{font-family:var(--mono);font-size:13px;color:var(--muted);letter-spacing:.06em}
+.project h2{font-family:var(--serif);font-weight:500;font-size:clamp(30px,4.2vw,46px);line-height:1.1;letter-spacing:-.015em;margin-top:10px;max-width:22ch}
+.p-sub{color:var(--muted);max-width:62ch;margin-top:14px}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+.tag{font-family:var(--mono);font-size:12.5px;padding:4px 10px;border:1px solid var(--line);border-radius:6px;color:var(--muted);background:var(--surface)}
+.p-links{display:flex;flex-direction:column;gap:10px;align-items:flex-end}
+
+figure.shot{margin:32px 0 0;border-radius:14px;overflow:hidden;border:1px solid var(--line);background:var(--navy);box-shadow:0 1px 0 var(--line),0 24px 48px -28px rgba(10,20,40,.45)}
+figure.shot a{display:block}
+figcaption{font-size:14px;color:var(--muted);padding:12px 2px 0}
+
+.metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:40px 0}
+.metric{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:22px 22px 20px}
+.metric .v{font-family:var(--serif);font-size:44px;line-height:1;letter-spacing:-.02em;font-weight:600}
+.metric .v em{font-style:normal;color:var(--accent)}
+.metric .l{color:var(--muted);font-size:14.5px;margin-top:10px;line-height:1.45}
+
+.cols{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;margin-top:8px}
+.cols h3{font-family:var(--mono);font-size:13px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:14px}
+.cols ul{list-style:none}
+.cols li{padding:12px 0;border-top:1px solid var(--line);font-size:16px}
+.cols li:last-child{border-bottom:1px solid var(--line)}
+.cols li strong{font-weight:600}
+.reco{background:var(--accent-soft);border-radius:14px;padding:22px 24px}
+.reco h3{color:var(--accent)}
+.reco li{border-color:color-mix(in srgb,var(--accent) 22%,transparent)!important}
+
+.gallery{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:40px;align-items:start}
+.gallery figure.shot{margin:0}
+
+.next{display:flex;justify-content:space-between;align-items:center;margin-top:48px;padding-top:24px;border-top:1px dashed var(--line);font-size:15px;color:var(--muted)}
+.next a{color:var(--ink);font-weight:500;text-decoration:none;border-bottom:1px solid var(--accent)}
+
+/* about */
+section.about{padding:88px 0;border-bottom:1px solid var(--line)}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px}
+.about h2{font-family:var(--serif);font-weight:500;font-size:38px;letter-spacing:-.015em;line-height:1.1}
+.about p{color:var(--muted);margin-top:16px}
+.stack{display:grid;grid-template-columns:1fr 1fr;gap:0;border-top:1px solid var(--line)}
+.stack div{padding:14px 0;border-bottom:1px solid var(--line)}
+.stack dt{font-family:var(--mono);font-size:12.5px;color:var(--muted);letter-spacing:.04em}
+.stack dd{font-weight:500;margin-top:2px}
+
+footer{padding:64px 0 80px}
+footer .wrap{display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap}
+footer h2{font-family:var(--serif);font-weight:500;font-size:34px;letter-spacing:-.015em}
+footer p{color:var(--muted);font-size:14px;margin-top:6px}
+
+@media (max-width:860px){
+  .steps{grid-template-columns:1fr 1fr}
+  .step{border-bottom:1px solid var(--line)}
+  .step:nth-child(2n){border-right:0}
+  .step:last-child{grid-column:1/-1;border-bottom:0}
+  .p-head,.cols,.about-grid{grid-template-columns:1fr}
+  .p-links{flex-direction:row;flex-wrap:wrap;align-items:flex-start}
+  .metrics{grid-template-columns:1fr}
+  .gallery{grid-template-columns:1fr}
+  nav ul{gap:16px}
+}
+@media (max-width:520px){
+  body{font-size:16px}
+  .wrap{padding:0 16px}
+  nav ul li:nth-child(n+3){display:none}
+  header.hero{padding:64px 0 52px}
+  .steps{grid-template-columns:1fr}
+  .step{border-right:0}
+  .metric .v{font-size:38px}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a class="brand" href="#">felipe santana</a>
+    <ul>
+      <li><a href="#olist">Olist</a></li>
+      <li><a href="#energia">Energia</a></li>
+      <li><a href="#sobre">Sobre</a></li>
+      <li><a href="#contato">Contato</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="eyebrow">Analista de Dados · São Paulo</div>
+    <h1>Da pergunta de negócio ao dashboard.</h1>
+    <p class="lead">Sou Felipe Santana, tecnólogo em Ciência de Dados pela FIAP. Construo análises ponta a ponta: coleto e limpo os dados em Python, modelo e testo em SQL com dbt e entrego a resposta em um dashboard com recomendações práticas.</p>
+    <div class="links">
+      <a class="btn solid" href="#olist">Ver projetos</a>
+      <a class="btn" href="https://github.com/santana7o">GitHub</a>
+      <a class="btn" href="https://www.linkedin.com/in/felipe-gabriel-coelho-de-santana-a33b49304">LinkedIn</a>
+    </div>
+  </div>
+</header>
+
+<section class="method">
+  <div class="wrap">
+    <h2>Como os projetos são construídos</h2>
+    <div class="steps">
+      <div class="step"><b>01</b><span>Pergunta</span><small>Um problema de negócio com decisão em jogo</small></div>
+      <div class="step"><b>02</b><span>Python</span><small>Ingestão, perfil e limpeza no Colab com pandas</small></div>
+      <div class="step"><b>03</b><span>DuckDB</span><small>Camadas bronze e silver em um banco local</small></div>
+      <div class="step"><b>04</b><span>dbt + SQL</span><small>Staging, marts e testes de qualidade automáticos</small></div>
+      <div class="step"><b>05</b><span>Tableau</span><small>Dashboard interativo com os achados e recomendações</small></div>
+    </div>
+    <p class="note">Os dois projetos abaixo seguem a mesma arquitetura, orquestrada por um único <code>pipeline.py</code>, e têm o código completo no GitHub.</p>
+  </div>
+</section>
+
+<section class="project" id="olist">
+  <div class="wrap">
+    <div class="p-head">
+      <div>
+        <div class="p-num">PROJETO 01 · E-COMMERCE</div>
+        <h2>Atrasos na entrega derrubam a satisfação do cliente?</h2>
+        <p class="p-sub">96 mil pedidos do marketplace Olist, de jan/2017 a ago/2018. A pergunta: quanto o atraso pesa na nota do cliente, onde o problema é mais grave e quanta receita está envolvida.</p>
+        <div class="tags"><span class="tag">Python</span><span class="tag">pandas</span><span class="tag">DuckDB</span><span class="tag">dbt</span><span class="tag">SQL</span><span class="tag">Tableau</span></div>
+      </div>
+      <div class="p-links">
+        <a class="btn solid" href="https://public.tableau.com/app/profile/felipe.gabriel.coelho.de.santana/viz/olist_dashboard_final/DashboardOlist">Dashboard interativo</a>
+        <a class="btn" href="https://github.com/santana7o/olist-ecommerce-analytics">Código no GitHub</a>
+      </div>
+    </div>
+
+    <figure class="shot"><a href="https://public.tableau.com/app/profile/felipe.gabriel.coelho.de.santana/viz/olist_dashboard_final/DashboardOlist"><img src="img/olist_visao_geral.jpg" width="1399" height="926" alt="Dashboard Olist com KPIs, mapa de atraso por estado, nota por faixa de atraso, pedidos por mês e nota por categoria"></a></figure>
+    <figcaption>Visão geral do painel com todos os pedidos entregues.</figcaption>
+
+    <div class="metrics">
+      <div class="metric"><div class="v">4,3 <em>→</em> 2,3</div><div class="l">Nota média quando o pedido chega adiantado contra 4 a 7 dias de atraso</div></div>
+      <div class="metric"><div class="v">54%</div><div class="l">dos pedidos atrasados recebem nota 1 ou 2, contra 9% dos pontuais</div></div>
+      <div class="metric"><div class="v">R$ 1,15 mi</div><div class="l">em vendas passaram por pedidos atrasados no período</div></div>
+    </div>
+
+    <div class="cols">
+      <div>
+        <h3>O que os dados mostram</h3>
+        <ul>
+          <li><strong>A nota despenca a partir de 4 dias de atraso.</strong> Até 3 dias o cliente ainda tolera (3,75); depois cai para 2,30 e, com 8 dias ou mais, para 1,73.</li>
+          <li><strong>O Nordeste atrasa 14,3% dos pedidos,</strong> o dobro do Sul (7,0%).</li>
+          <li><strong>Móveis de escritório</strong> é a categoria com a pior nota (3,66).</li>
+          <li><strong>Métricas calculadas por pedido,</strong> não por item, para não inflar médias em pedidos com vários produtos.</li>
+        </ul>
+      </div>
+      <div class="reco">
+        <h3>Recomendações</h3>
+        <ul>
+          <li>Prazos prometidos mais realistas para o Nordeste e o RJ.</li>
+          <li>Alerta operacional a partir de 4 dias de atraso, onde a nota desaba.</li>
+          <li>Investigar a operação de móveis de escritório.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="gallery">
+      <figure class="shot"><img src="img/olist_nota_atraso.jpg" width="691" height="328" alt="Gráfico de barras da nota média por faixa de atraso" loading="lazy"></figure>
+      <figure class="shot"><img src="img/olist_nordeste.jpg" width="1399" height="926" alt="Dashboard Olist filtrado para a região Nordeste" loading="lazy"></figure>
+    </div>
+    <figcaption>À esquerda, a nota por faixa de atraso. À direita, o painel filtrado para o Nordeste: 14,3% de atraso e nota 3,97.</figcaption>
+
+    <div class="next"><span>Mesma arquitetura, outro setor</span><a href="#energia">Próximo: energia no Brasil</a></div>
+  </div>
+</section>
+
+<section class="project" id="energia">
+  <div class="wrap">
+    <div class="p-head">
+      <div>
+        <div class="p-num">PROJETO 02 · SETOR ELÉTRICO</div>
+        <h2>Por que a energia fica cara quando para de chover?</h2>
+        <p class="p-sub">Seis anos de dados horários abertos do ONS (cerca de 240 mil registros, de 2020 até hoje) cruzando custo da energia, nível dos reservatórios, chuva e geração por fonte nas quatro regiões do país.</p>
+        <div class="tags"><span class="tag">Python</span><span class="tag">DuckDB</span><span class="tag">dbt</span><span class="tag">SQL</span><span class="tag">Tableau</span><span class="tag">Dados abertos</span></div>
+      </div>
+      <div class="p-links">
+        <a class="btn solid" href="https://public.tableau.com/app/profile/felipe.gabriel.coelho.de.santana/viz/energia_dashboard/Preo">Dashboard interativo</a>
+        <a class="btn" href="https://github.com/santana7o/energia-brasil-analytics">Código no GitHub</a>
+      </div>
+    </div>
+
+    <figure class="shot"><a href="https://public.tableau.com/app/profile/felipe.gabriel.coelho.de.santana/viz/energia_dashboard/Preo"><img src="img/energia_preco.jpg" width="1600" height="1001" alt="Dashboard Energia no Brasil, página Preço, com CMO mensal e CMO por hora do dia" loading="lazy"></a></figure>
+    <figcaption>Página Preço: custo mensal da energia e o formato do preço ao longo do dia.</figcaption>
+
+    <div class="metrics">
+      <div class="metric"><div class="v">5,6<em>x</em></div><div class="l">mais cara com reservatório do Sudeste abaixo de 40% (R$ 435/MWh) do que acima de 60% (R$ 78)</div></div>
+      <div class="metric"><div class="v">R$ 56 <em>→</em> 378</div><div class="l">custo ao meio-dia contra às 18h no ano atual, a "curva do pato" da energia solar</div></div>
+      <div class="metric"><div class="v">20%</div><div class="l">das horas deste ano com custo zero, por sobra de geração renovável</div></div>
+    </div>
+
+    <div class="cols">
+      <div>
+        <h3>O que os dados mostram</h3>
+        <ul>
+          <li><strong>O preço ainda é função da água.</strong> A correlação mensal entre reservatório e preço no Sudeste é de −0,45.</li>
+          <li><strong>Crise hídrica de ago/2021:</strong> custo acima de R$ 3.000/MWh, reservatórios em 24% e chuva a 59% da média.</li>
+          <li><strong>A solar saiu de 0,9% para 14,2%</strong> da geração e já mudou o formato do dia.</li>
+          <li><strong>42 testes dbt</strong> garantem, por exemplo, que o balanço energético fecha e que não há hora duplicada.</li>
+        </ul>
+      </div>
+      <div class="reco">
+        <h3>Na prática</h3>
+        <ul>
+          <li>Quem compra energia pode acompanhar os reservatórios para se antecipar aos picos de preço.</li>
+          <li>Quem consome muito pode economizar deslocando consumo para o meio do dia.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="gallery">
+      <figure class="shot"><img src="img/energia_matriz.jpg" width="1600" height="1001" alt="Dashboard Energia no Brasil, página Matriz" loading="lazy"></figure>
+      <figure class="shot"><img src="img/energia_reservatorios.jpg" width="1600" height="1001" alt="Dashboard Energia no Brasil, página Reservatórios" loading="lazy"></figure>
+    </div>
+    <figcaption>Páginas Matriz (geração por fonte) e Reservatórios (nível e chuva por região).</figcaption>
+
+    <div class="next"><span>Voltar ao primeiro projeto</span><a href="#olist">Olist: atraso x satisfação</a></div>
+  </div>
+</section>
+
+<section class="about" id="sobre">
+  <div class="wrap about-grid">
+    <div>
+      <h2>Sobre</h2>
+      <p>Tecnólogo em Ciência de Dados pela FIAP (2024–2026), em São Paulo. Antes da área de dados, trabalhei com suporte de TI, onde automatizei tarefas recorrentes e montei relatórios de indicadores internos.</p>
+      <p>Busco uma vaga de Analista de Dados ou BI júnior, com interesse especial nos setores financeiro e de seguros.</p>
+    </div>
+    <dl class="stack">
+      <div><dt>Linguagens</dt><dd>SQL, Python</dd></div>
+      <div><dt>Dados</dt><dd>pandas, DuckDB</dd></div>
+      <div><dt>Modelagem</dt><dd>dbt, modelo estrela</dd></div>
+      <div><dt>Visualização</dt><dd>Tableau, Power BI</dd></div>
+      <div><dt>Ferramentas</dt><dd>Git, Colab, DBeaver</dd></div>
+      <div><dt>Também</dt><dd>Excel, ETL</dd></div>
+    </dl>
+  </div>
+</section>
+
+<footer id="contato">
+  <div class="wrap">
+    <div>
+      <h2>Vamos conversar.</h2>
+      <p>Felipe Gabriel Coelho de Santana · Analista de Dados</p>
+    </div>
+    <div class="links" style="display:flex;gap:12px;flex-wrap:wrap">
+      <a class="btn solid" href="https://www.linkedin.com/in/felipe-gabriel-coelho-de-santana-a33b49304">LinkedIn</a>
+      <a class="btn" href="https://github.com/santana7o">GitHub</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
