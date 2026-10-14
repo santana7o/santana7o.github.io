@@ -203,6 +203,33 @@
   SPR.sign = draw(9, 10, function (p) { p('w', 4, 5, 1, 5); p('x', 0, 0, 9, 5); p('X', 0, 4, 9, 1); p('X', 2, 1, 5, 1); p('X', 2, 2, 3, 1); });
   function node(c) { return draw(7, 7, function (p) { p('k', 0, 0, 7, 7); p(c, 1, 1, 5, 5); p('f', 2, 2); }); }
   SPR.nodeY = node('y'); SPR.nodeC = node('c'); SPR.nodeG = node('G'); SPR.nodeP = node('p');
+  // Ilha do Lakehouse: laguinho, tanques, bombas e as camadas bronze/prata/ouro
+  SPR.lake = draw(22, 9, function (p) {
+    for (var y = 0; y < 9; y++) {
+      var dy = (y - 4) / 4.5, half = Math.floor(11 * Math.sqrt(Math.max(0, 1 - dy * dy)));
+      if (half < 1) continue;
+      p(y === 0 || y === 8 ? 'B' : 'b', 11 - half, y, half * 2, 1);
+      p('B', 11 - half, y); p('B', 10 + half, y);
+    }
+    p('f', 6, 3, 3, 1); p('f', 13, 5, 2, 1); p('c', 8, 4, 4, 1);
+  });
+  SPR.tank = draw(12, 13, function (p) {
+    p('F', 2, 0, 8, 1); p('f', 1, 1, 10, 2);
+    p('f', 1, 3, 10, 9); p('F', 9, 3, 2, 9);
+    p('l', 1, 6, 10, 2); p('R', 9, 6, 2, 2);
+    p('S', 0, 12, 12, 1);
+  });
+  SPR.pump = draw(6, 10, function (p) {
+    p('R', 0, 0, 5, 1); p('l', 0, 1, 5, 8); p('R', 4, 1, 1, 8);
+    p('f', 1, 2, 3, 2); p('k', 5, 3, 1, 4);
+    p('S', 0, 9, 6, 1);
+  });
+  SPR.flare = draw(3, 22, function (p) { p('S', 1, 0, 1, 22); p('M', 0, 0, 3, 1); p('S', 0, 20, 3, 2); });
+  SPR.layers = draw(14, 9, function (p) {
+    p('x', 0, 6, 14, 3); p('X', 0, 8, 14, 1); p('X', 12, 6, 2, 3);
+    p('m', 2, 3, 10, 3); p('M', 2, 5, 10, 1); p('M', 10, 3, 2, 3);
+    p('y', 4, 0, 6, 3); p('Y', 4, 2, 6, 1); p('Y', 8, 0, 2, 3);
+  });
 
   /* ---------- world ---------- */
   var ISL = [
@@ -210,7 +237,8 @@
     { id: 'olist', name: 'Porto Olist', sub: 'Atraso x satisfação', x: 720, y: 270, R: 72, seed: 2.1, dock: Math.PI * 0.75, col: '#e8743b', ly: -66 },
     { id: 'knime', name: 'Floresta Aleatória', sub: 'Nota ruim e RFM no KNIME', x: 250, y: 190, R: 62, seed: 3.7, dock: Math.PI * 0.42, col: '#4f9a43', ly: -58 },
     { id: 'energia', name: 'Ilha dos Ventos', sub: 'Preço da energia', x: 1110, y: 500, R: 76, seed: 4.4, dock: Math.PI * 0.88, col: '#49c2c9', ly: -72 },
-    { id: 'varejo', name: 'Ilha do Mercado', sub: 'Varejo online em SQL', x: 720, y: 700, R: 66, seed: 5.9, dock: -Math.PI * 0.62, col: '#e86a8a', ly: -58 }
+    { id: 'varejo', name: 'Ilha do Mercado', sub: 'Varejo online em SQL', x: 720, y: 700, R: 66, seed: 5.9, dock: -Math.PI * 0.62, col: '#e86a8a', ly: -58 },
+    { id: 'lakehouse', name: 'Ilha do Lakehouse', sub: 'Combustíveis no Databricks', x: 1140, y: 215, R: 62, seed: 6.6, dock: Math.PI * 0.72, col: '#e0574b', ly: -60 }
   ];
   var ROCKS = [
     { x: 980, y: 140, R: 16, seed: 7 }, { x: 470, y: 410, R: 11, seed: 8 }, { x: 1290, y: 820, R: 18, seed: 9 },
@@ -250,6 +278,12 @@
       { s: 'pine2', x: 20, y: -18 }, { s: 'pine', x: 32, y: -10 }, { s: 'pine', x: -44, y: 2 }, { s: 'pine2', x: 42, y: 4 },
       { s: 'pine', x: -28, y: 2 }, { s: 'pine', x: -14, y: -6 }, { s: 'oak', x: 30, y: 14 }, { s: 'cabin', x: 6, y: 8 },
       { s: 'nodeY', x: -38, y: 24 }, { s: 'nodeC', x: -24, y: 28 }, { s: 'nodeG', x: -10, y: 24 }, { s: 'nodeP', x: -24, y: 16 }
+    ],
+    lakehouse: [
+      { s: 'palm', x: -46, y: -2 }, { s: 'lake', x: -20, y: -6 }, { s: 'house', x: 4, y: -14 }, { s: 'flare', x: 22, y: -18 },
+      { s: 'tank', x: 32, y: -8 }, { s: 'tank', x: 44, y: 4 }, { s: 'palm', x: -28, y: -24 },
+      { s: 'pump', x: -32, y: 16 }, { s: 'pump', x: -22, y: 19 }, { s: 'layers', x: 8, y: 16 },
+      { s: 'bush', x: 30, y: 22 }, { s: 'bush', x: -8, y: 27 }
     ]
   };
   var WIRES = [[-38, 24, -24, 28], [-38, 24, -24, 16], [-24, 28, -10, 24], [-24, 16, -10, 24]];
@@ -334,6 +368,7 @@
       if (it.s === 'lh') I.dyn.lamp = { x: Math.round(bx - sp.width / 2) + 7, y: Math.round(by - sp.height) + 6 };
       if (it.s === 'cabin') I.dyn.chim = { x: Math.round(bx - sp.width / 2) + 11, y: Math.round(by - sp.height) - 1 };
       if (it.s === 'ware') I.dyn.flag = { x: Math.round(bx), y: Math.round(by - sp.height) };
+      if (it.s === 'flare') I.dyn.flame = { x: Math.round(bx), y: Math.round(by - sp.height) };
       if (it.s.indexOf('stall') === 0) I.dyn.balloons.push({ x: Math.round(bx + 6), y: Math.round(by - sp.height) - 2, c: P[it.s === 'stallP' ? 'p' : it.s === 'stallC' ? 'c' : 'y'] });
     });
     I.base = base; I.dec = dec;
@@ -519,6 +554,12 @@
       var fx = D.flag.x - ox, fy = D.flag.y - oy;
       px(g, '#7d8a95', fx, fy - 10, 1, 10);
       for (var c = 0; c < 6; c++) { var off = Math.round(Math.sin(t * 6 - c * 0.8) * 0.8); px(g, c < 3 ? '#e8743b' : '#f2c94c', fx + 1 + c, fy - 10 + off, 1, 4); }
+    }
+    if (D.flame) {
+      var qx = D.flame.x - ox, qy = D.flame.y - oy, fk = Math.floor(t * 8) % 3;
+      px(g, '#e0574b', qx - 1, qy - 4, 3, 4);
+      px(g, '#f2c94c', qx - (fk === 1 ? 1 : 0), qy - 6 - fk, 2, 3 + fk);
+      px(g, '#fff6c2', qx, qy - 3, 1, 2);
     }
     D.balloons.forEach(function (b, i) {
       var bx = b.x - ox, by = b.y - oy - 6 + Math.round(Math.sin(t * 2 + i) * 1.2);

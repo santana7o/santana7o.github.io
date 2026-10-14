@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Felipe Santana | Analista de Dados</title>
-<meta name="description" content="Portfólio de Felipe Santana, Analista de Dados em São Paulo. Navegue de barco pelas ilhas: cada ilha é um projeto de dados com Python, SQL, dbt, DuckDB, Tableau e KNIME.">
+<meta name="description" content="Portfólio de Felipe Santana, Analista de Dados em São Paulo. Navegue de barco pelas ilhas: cada ilha é um projeto de dados com Python, SQL, dbt, DuckDB, Databricks, PySpark, Tableau e KNIME.">
 <meta property="og:title" content="Felipe Santana | Analista de Dados">
 <meta property="og:description" content="Um arquipélago em pixel art onde cada ilha é um projeto de dados.">
 <meta property="og:image" content="https://santana7o.github.io/img/olist_visao_geral.jpg">
@@ -41,6 +41,7 @@
   <button class="pbtn small alt" type="button" data-sail="energia" style="--c:#49c2c9"><i></i>Ilha dos Ventos</button>
   <button class="pbtn small alt" type="button" data-sail="varejo" style="--c:#e86a8a"><i></i>Ilha do Mercado</button>
   <button class="pbtn small alt" type="button" data-sail="knime" style="--c:#4f9a43"><i></i>Floresta Aleatória</button>
+  <button class="pbtn small alt" type="button" data-sail="lakehouse" style="--c:#e0574b"><i></i>Ilha do Lakehouse</button>
   <button class="pbtn small alt" type="button" data-sail="sobre" style="--c:#f2c94c"><i></i>Ilha do Farol</button>
 </nav>
 
@@ -61,12 +62,13 @@
         <h2 id="h-lista">Todos os projetos</h2>
       </div>
       <div class="body">
-        <p class="lede">Quatro projetos ponta a ponta com dados públicos e reais, da pergunta de negócio à recomendação. Cada um tem o código completo no GitHub e pode ser reproduzido do zero.</p>
+        <p class="lede">Cinco projetos ponta a ponta com dados públicos e reais, da pergunta de negócio à recomendação. Cada um tem o código completo no GitHub e pode ser reproduzido do zero.</p>
         <div class="cards">
           <div class="pcard pbox" style="--c:#e8743b"><span class="tag">Porto Olist</span><h3 class="px">Atrasos na entrega derrubam a satisfação do cliente?</h3><p>96 mil pedidos da Olist. Python, DuckDB, dbt, SQL, Tableau.</p><p class="res">4,3 para 2,3<small>nota média de adiantado para 4 a 7 dias de atraso</small></p><div class="row"><button class="pbtn small" type="button" data-open="olist">Abrir projeto</button><button class="pbtn small alt" type="button" data-sail="olist">Navegar até a ilha</button></div></div>
           <div class="pcard pbox" style="--c:#49c2c9"><span class="tag">Ilha dos Ventos</span><h3 class="px">Por que a energia fica cara quando para de chover?</h3><p>240 mil registros horários do ONS. Python, DuckDB, dbt, SQL, Tableau.</p><p class="res">5,6x<small>mais cara com reservatório abaixo de 40%</small></p><div class="row"><button class="pbtn small" type="button" data-open="energia">Abrir projeto</button><button class="pbtn small alt" type="button" data-sail="energia">Navegar até a ilha</button></div></div>
           <div class="pcard pbox" style="--c:#e86a8a"><span class="tag">Ilha do Mercado</span><h3 class="px">O e-commerce está crescendo de forma saudável?</h3><p>1 milhão de linhas de vendas. SQL, DuckDB, Python, Excel, GitHub Actions.</p><p class="res">£42 a 80 mil<small>por ano a cada 10 p.p. de reativação de clientes</small></p><div class="row"><button class="pbtn small" type="button" data-open="varejo">Abrir projeto</button><button class="pbtn small alt" type="button" data-sail="varejo">Navegar até a ilha</button></div></div>
           <div class="pcard pbox" style="--c:#4f9a43"><span class="tag">Floresta Aleatória</span><h3 class="px">Dá para prever quem vai dar nota ruim?</h3><p>96 mil pedidos da Olist. KNIME, RFM, k-Means, Random Forest.</p><p class="res">74%<small>dos pedidos atrasados são avaliados antes de chegar</small></p><div class="row"><button class="pbtn small" type="button" data-open="knime">Abrir projeto</button><button class="pbtn small alt" type="button" data-sail="knime">Navegar até a ilha</button></div></div>
+          <div class="pcard pbox" style="--c:#e0574b"><span class="tag">Ilha do Lakehouse</span><h3 class="px">Em quais estados o etanol compensa mais que a gasolina?</h3><p>950 mil coletas de preço da ANP. Databricks, PySpark, Delta Lake, Unity Catalog.</p><p class="res">10 estados<small>onde o etanol compensa na semana mais recente</small></p><div class="row"><button class="pbtn small" type="button" data-open="lakehouse">Abrir projeto</button><button class="pbtn small alt" type="button" data-sail="lakehouse">Navegar até a ilha</button></div></div>
         </div>
         <div class="next"><p>Quer saber mais sobre mim?</p><button class="pbtn" type="button" data-open="sobre">Ilha do Farol: sobre mim</button></div>
       </div>
@@ -239,6 +241,49 @@
           <figure><img src="img/knime_segmentos.jpg" width="1600" height="900" loading="lazy" alt="Gráfico de barras da receita por segmento RFM"><figcaption>Receita por segmento RFM.</figcaption></figure>
           <figure><img src="img/knime_workflow_modelo.jpg" width="1270" height="650" loading="lazy" alt="Workflow do modelo de avaliação ruim no KNIME"><figcaption>Workflow do modelo: baseline, árvore de decisão e Random Forest no mesmo teste.</figcaption></figure>
         </div>
+        <div class="next"><p>Próxima ilha: engenharia de dados em escala, no Databricks.</p><button class="pbtn" type="button" data-sail="lakehouse">Navegar até a Ilha do Lakehouse</button></div>
+      </div>
+    </article>
+
+    <!-- LAKEHOUSE -->
+    <article class="proj" data-id="lakehouse" data-name="Ilha do Lakehouse" style="--c:#e0574b" hidden>
+      <div class="scene" data-postcard="lakehouse"></div>
+      <div class="title">
+        <span class="tag">Ilha do Lakehouse · Engenharia de dados</span>
+        <h2 id="h-lakehouse">Em quais estados o etanol compensa mais que a gasolina?</h2>
+      </div>
+      <div class="body">
+        <p class="lede">Pipeline ponta a ponta no Databricks com os preços de combustíveis que a ANP publica todo mês: 950 mil coletas de jan/2025 a set/2026, nas 27 UFs. Os dados passam por uma arquitetura Medallion (Bronze, Silver e Gold) e chegam a um dashboard que atualiza sozinho toda semana.</p>
+        <ul class="chips"><li>Databricks</li><li>PySpark</li><li>Delta Lake</li><li>Unity Catalog</li><li>Lakeflow Pipelines</li><li>Asset Bundles</li><li>SQL</li><li>GitHub Actions</li></ul>
+        <div class="actions">
+          <a class="pbtn" href="https://github.com/santana7o/lakehouse-combustiveis-br">Ver código no GitHub</a>
+          <a class="pbtn alt" href="https://github.com/santana7o/lakehouse-combustiveis-br/blob/main/docs/arquitetura.md">Ler a arquitetura</a>
+        </div>
+        <div class="stats">
+          <div class="stat pbox"><b>10 estados</b><span>com etanol abaixo de 70% do preço da gasolina na semana mais recente; o MT lidera, com paridade de 0,60</span></div>
+          <div class="stat pbox"><b>R$ 7,57</b><span>pela gasolina em Roraima, a mais cara do país; a Região Norte lidera o ranking</span></div>
+          <div class="stat pbox"><b>950 mil</b><span>coletas de 20 arquivos mensais, ingeridas e validadas por um job serverless agendado</span></div>
+        </div>
+        <h3>O que o projeto mostra</h3>
+        <ul class="dots">
+          <li><strong>Ingestão que se adapta à fonte.</strong> A ANP muda o nome dos arquivos todo mês, até com erro de digitação. O job lê a página oficial, descobre os links e baixa só o que é novo.</li>
+          <li><strong>Medallion com Lakeflow Declarative Pipelines.</strong> Auto Loader incremental no Bronze, tipagem e deduplicação no Silver, três tabelas de negócio no Gold, tudo em Delta Lake no Unity Catalog.</li>
+          <li><strong>5 regras de qualidade de dados</strong> checadas a cada execução: data válida, preço positivo e plausível, CNPJ com 14 dígitos e UF válida.</li>
+          <li><strong>Infraestrutura como código.</strong> Schema, volume, pipeline, job e dashboard declarados em Databricks Asset Bundles, com ambientes de dev e produção.</li>
+          <li><strong>7 testes de PySpark e CI no GitHub Actions</strong> a cada mudança, com as transformações escritas como funções puras e testáveis.</li>
+        </ul>
+        <div class="reco pbox">
+          <h3>Na prática</h3>
+          <ul class="dots">
+            <li>Quem abastece carro flex pode consultar a paridade do seu estado antes de escolher o combustível.</li>
+            <li>O pipeline roda sozinho toda segunda às 8h; quando a ANP publica um mês novo, ele entra no dashboard sem intervenção.</li>
+          </ul>
+        </div>
+        <div class="pics">
+          <figure class="wide"><img src="img/lakehouse_paridade.jpg" width="1440" height="692" loading="lazy" alt="Dashboard no Databricks com a paridade etanol/gasolina por UF: 10 estados abaixo de 0,70"><figcaption>Dashboard AI/BI: em azul, os estados onde o etanol compensa.</figcaption></figure>
+          <figure><img src="img/lakehouse_pipeline.jpg" width="1440" height="812" loading="lazy" alt="Grafo do pipeline no Databricks: bronze_precos, silver_precos e três tabelas gold, todas concluídas"><figcaption>Pipeline Bronze → Silver → Gold rodando no Databricks.</figcaption></figure>
+          <figure><img src="img/lakehouse_qualidade.jpg" width="1440" height="748" loading="lazy" alt="Painel de expectations da tabela silver_precos com as 5 regras e 0% de falhas"><figcaption>As 5 regras de qualidade da camada Silver.</figcaption></figure>
+        </div>
         <div class="next"><p>Fim da rota. Que tal conhecer o capitão?</p><button class="pbtn" type="button" data-sail="sobre">Navegar até a Ilha do Farol</button></div>
       </div>
     </article>
@@ -267,10 +312,10 @@
         <h3>Ferramentas</h3>
         <dl class="stack">
           <div class="pbox"><dt>Linguagens</dt><dd>SQL, Python</dd></div>
-          <div class="pbox"><dt>Dados</dt><dd>pandas, DuckDB</dd></div>
+          <div class="pbox"><dt>Dados</dt><dd>pandas, DuckDB, PySpark</dd></div>
           <div class="pbox"><dt>Modelagem</dt><dd>dbt, modelo estrela</dd></div>
           <div class="pbox"><dt>Visualização</dt><dd>Tableau, Power BI</dd></div>
-          <div class="pbox"><dt>Ferramentas</dt><dd>Git, Colab, DBeaver, KNIME</dd></div>
+          <div class="pbox"><dt>Plataformas</dt><dd>Databricks, Git, KNIME, DBeaver</dd></div>
           <div class="pbox"><dt>Também</dt><dd>Excel, ETL, machine learning</dd></div>
         </dl>
         <div class="next"><p>Comece pela primeira ilha.</p><button class="pbtn" type="button" data-sail="olist">Navegar até o Porto Olist</button></div>
@@ -288,6 +333,7 @@
       <li><a href="https://github.com/santana7o/energia-brasil-analytics">Energia no Brasil</a></li>
       <li><a href="https://github.com/santana7o/varejo-online-sql">Varejo online em SQL</a></li>
       <li><a href="https://github.com/santana7o/olist-knime-portfolio">Olist no KNIME</a></li>
+      <li><a href="https://github.com/santana7o/lakehouse-combustiveis-br">Lakehouse de combustíveis no Databricks</a></li>
     </ul>
   </div>
 </noscript>
