@@ -2,487 +2,343 @@
 <html lang="pt-BR">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Felipe Santana | Analista de Dados</title>
-<meta name="description" content="Portfólio de Felipe Santana, Analista de Dados em São Paulo. Projetos ponta a ponta com Python, SQL, dbt, DuckDB, Tableau e KNIME.">
+<meta name="description" content="Portfólio de Felipe Santana, Analista de Dados em São Paulo. Navegue de barco pelas ilhas: cada ilha é um projeto de dados com Python, SQL, dbt, DuckDB, Tableau e KNIME.">
 <meta property="og:title" content="Felipe Santana | Analista de Dados">
-<meta property="og:description" content="Projetos de dados ponta a ponta: da pergunta de negócio ao dashboard.">
+<meta property="og:description" content="Um arquipélago em pixel art onde cada ilha é um projeto de dados.">
 <meta property="og:image" content="https://santana7o.github.io/img/olist_visao_geral.jpg">
-<meta name="theme-color" content="#12202b">
+<meta name="theme-color" content="#1d4a80">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,400;0,500;0,600;1,400&family=Schibsted+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
-<style>
-:root{
-  --bg:#f2f4f3; --surface:#ffffff; --ink:#12202b; --muted:#586470; --line:#d9dfdd;
-  --accent:#0b7a5c; --accent-ink:#ffffff; --accent-soft:#e3f1ec;
-  --side:#12202b; --side-ink:#e8eeec; --side-muted:#93a3ad; --side-line:#24343f;
-  --display:"Schibsted Grotesk",system-ui,sans-serif; --text:"Public Sans",system-ui,sans-serif;
-  --side-w:300px; --pad:clamp(20px,4vw,64px);
-}
-@media (prefers-color-scheme: dark){
-  :root{--bg:#0e161c;--surface:#152129;--ink:#e6ecea;--muted:#9aa8b1;--line:#24343f;
-    --accent:#3fbf95;--accent-ink:#06261c;--accent-soft:#12302a;--side:#0a1116;--side-line:#1c2a33}
-}
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;scroll-padding-top:24px}
-@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
-body{background:var(--bg);color:var(--ink);font-family:var(--text);font-size:16.5px;line-height:1.6;-webkit-font-smoothing:antialiased}
-a{color:inherit}
-img{display:block;max-width:100%;height:auto}
-:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px}
-
-/* layout */
-.shell{display:grid;grid-template-columns:var(--side-w) minmax(0,1fr);min-height:100vh}
-
-/* sidebar */
-.side{position:sticky;top:0;height:100vh;background:var(--side);color:var(--side-ink);display:flex;flex-direction:column;padding:36px 28px 28px;overflow-y:auto}
-.who{display:flex;align-items:center;gap:14px}
-.mono{width:44px;height:44px;border-radius:10px;background:#0b7a5c;color:#fff;display:grid;place-items:center;font-family:var(--display);font-weight:700;font-size:18px;flex:none}
-.who b{display:block;font-family:var(--display);font-weight:600;font-size:18px;line-height:1.2}
-.who span{font-size:14px;color:var(--side-muted)}
-.side p.pitch{font-size:14.5px;color:var(--side-muted);margin-top:22px;line-height:1.55}
-.side nav{margin-top:30px;border-top:1px solid var(--side-line)}
-.side nav a{display:block;text-decoration:none;padding:11px 0 11px 14px;border-bottom:1px solid var(--side-line);border-left:2px solid transparent;margin-left:-14px;transition:border-color .15s,background .15s}
-.side nav a strong{display:block;font-weight:500;font-size:14.5px}
-.side nav a small{display:block;font-size:12.5px;color:var(--side-muted)}
-.side nav a:hover{background:rgba(255,255,255,.04)}
-.side nav a.on{border-left-color:#3fbf95}
-.side nav a.on strong{color:#fff}
-.side .group{font-size:12.5px;color:var(--side-muted);margin:22px 0 4px}
-.side-foot{margin-top:auto;padding-top:28px;display:flex;flex-direction:column;gap:10px}
-.side-foot a{display:flex;align-items:center;text-decoration:none;font-size:14px;padding:10px 14px;border:1px solid var(--side-line);border-radius:8px}
-.side-foot a:hover{border-color:var(--side-muted)}
-.side-foot a.primary{background:#0b7a5c;border-color:#0b7a5c;color:#fff;font-weight:500}
-.side-foot a.primary:hover{filter:brightness(1.1)}
-.side-foot small{font-size:12.5px;color:var(--side-muted);margin-top:4px}
-
-/* main */
-main{padding:0 var(--pad) 64px;min-width:0}
-.inner{max-width:1480px}
-
-/* intro */
-.intro{padding:clamp(48px,7vw,96px) 0 40px;display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:clamp(32px,5vw,80px);align-items:end;border-bottom:1px solid var(--line)}
-.intro h1{font-family:var(--display);font-weight:600;font-size:clamp(36px,4.6vw,64px);line-height:1.05;letter-spacing:-.025em;max-width:16ch}
-.intro .lede{font-size:18px;color:var(--muted);max-width:52ch;margin-top:22px}
-.facts{display:grid;grid-template-columns:1fr 1fr;border-top:2px solid var(--ink)}
-.facts div{padding:14px 0;border-bottom:1px solid var(--line)}
-.facts div:nth-child(odd){padding-right:16px}
-.facts dt{font-size:13px;color:var(--muted)}
-.facts dd{font-family:var(--display);font-weight:600;font-size:22px;line-height:1.25;margin-top:2px}
-
-/* index table */
-.index{padding:44px 0 8px}
-.sec-title{font-family:var(--display);font-weight:600;font-size:22px;letter-spacing:-.01em}
-.sec-sub{color:var(--muted);font-size:15px;margin-top:4px}
-.idx{width:100%;border-collapse:separate;border-spacing:0;margin-top:22px;font-size:15px;background:var(--surface);border:1px solid var(--line);border-radius:12px;overflow:hidden}
-.idx th{text-align:left;font-weight:500;font-size:13px;color:var(--muted);padding:12px 18px;border-bottom:1px solid var(--line)}
-.idx td{padding:16px 18px;border-bottom:1px solid var(--line);vertical-align:top}
-.idx tr:last-child td{border-bottom:0}
-.idx tbody tr{cursor:pointer;transition:background .12s}
-.idx tbody tr:hover{background:var(--accent-soft)}
-.idx td a{text-decoration:none;font-weight:600}
-.idx td a:hover{color:var(--accent)}
-.idx .res{font-family:var(--display);font-weight:600;font-size:17px;white-space:nowrap}
-.idx .res small{display:block;font-family:var(--text);font-weight:400;font-size:13px;color:var(--muted);white-space:normal}
-.idx .tools{color:var(--muted)}
-
-/* case study */
-.case{padding:clamp(56px,7vw,96px) 0 clamp(40px,5vw,64px);border-bottom:1px solid var(--line)}
-.case-head{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:28px;align-items:end}
-.kicker{font-size:14px;color:var(--accent);font-weight:600}
-.case h2{font-family:var(--display);font-weight:600;font-size:clamp(28px,3.2vw,44px);line-height:1.1;letter-spacing:-.02em;margin-top:8px;max-width:24ch}
-.case .lede{color:var(--muted);max-width:70ch;margin-top:14px;font-size:17px}
-.tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:16px;list-style:none}
-.tags li{font-size:13px;padding:3px 10px;border-radius:999px;background:var(--surface);border:1px solid var(--line);color:var(--muted)}
-.actions{display:flex;gap:10px;flex-wrap:wrap}
-.btn{display:inline-flex;align-items:center;justify-content:center;padding:10px 16px;border-radius:8px;font-size:14.5px;font-weight:500;text-decoration:none;border:1px solid var(--ink);white-space:nowrap;transition:background .15s,color .15s}
-.btn:hover{background:var(--ink);color:var(--bg)}
-.btn.solid{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
-.btn.solid:hover{filter:brightness(1.08);background:var(--accent);color:var(--accent-ink)}
-
-.case-body{display:grid;grid-template-columns:minmax(300px,5fr) minmax(0,7fr);gap:clamp(28px,4vw,64px);margin-top:36px;align-items:start}
-.case-text{position:sticky;top:24px}
-.stats{display:grid;grid-template-columns:1fr;border-top:2px solid var(--ink)}
-.stat{display:grid;grid-template-columns:minmax(130px,auto) 1fr;gap:18px;align-items:baseline;padding:14px 0;border-bottom:1px solid var(--line)}
-.stat b{font-family:var(--display);font-weight:600;font-size:28px;line-height:1.05;letter-spacing:-.02em;color:var(--accent);white-space:nowrap}
-.stat span{font-size:14.5px;color:var(--muted);line-height:1.45}
-.case-text h3{font-family:var(--display);font-weight:600;font-size:16px;margin:28px 0 8px}
-.findings{list-style:none}
-.findings li{padding:10px 0;border-bottom:1px solid var(--line);font-size:15.5px}
-.findings li:first-child{border-top:1px solid var(--line)}
-.findings strong{font-weight:600}
-.reco{margin-top:24px;background:var(--accent-soft);border-radius:12px;padding:16px 20px}
-.case-text .reco h3{margin:0 0 6px;color:var(--accent)}
-.reco ul{padding-left:18px}
-.reco li{font-size:15px;padding:3px 0}
-
-.media{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-.shot{grid-column:1/-1;margin:0}
-.shot.half{grid-column:auto}
-.frame{border-radius:12px;overflow:hidden;border:1px solid var(--line);background:#fff;box-shadow:0 18px 40px -30px rgba(12,24,32,.55)}
-.frame a{display:block}
-.shot figcaption{font-size:13.5px;color:var(--muted);padding-top:8px;line-height:1.45}
-
-/* about */
-.about{padding:clamp(56px,7vw,96px) 0;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(32px,5vw,80px);border-bottom:1px solid var(--line)}
-.about h2{font-family:var(--display);font-weight:600;font-size:clamp(28px,3vw,38px);letter-spacing:-.02em;line-height:1.1}
-.about p{color:var(--muted);margin-top:14px;max-width:60ch}
-.flow{list-style:none;margin-top:26px;counter-reset:s}
-.flow li{counter-increment:s;display:grid;grid-template-columns:34px 1fr;gap:10px;padding:10px 0;border-top:1px solid var(--line);font-size:15px}
-.flow li::before{content:counter(s);font-family:var(--display);font-weight:600;color:var(--accent)}
-.flow li b{font-weight:600}
-.flow li span{color:var(--muted)}
-.stack{display:grid;grid-template-columns:1fr 1fr;border-top:2px solid var(--ink);align-self:start}
-.stack div{padding:14px 0;border-bottom:1px solid var(--line)}
-.stack div:nth-child(odd){padding-right:16px}
-.stack dt{font-size:13px;color:var(--muted)}
-.stack dd{font-weight:500;margin-top:2px}
-
-.contact{padding:56px 0 8px;display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap}
-.contact h2{font-family:var(--display);font-weight:600;font-size:clamp(26px,3vw,36px);letter-spacing:-.02em}
-.contact p{color:var(--muted);margin-top:4px}
-
-/* mobile header */
-.topbar{display:none}
-
-@media (max-width:1200px){
-  .case-body{grid-template-columns:1fr}
-  .case-text{position:static}
-  .stats{grid-template-columns:repeat(3,1fr);gap:0 20px}
-  .stat{grid-template-columns:1fr;gap:6px}
-}
-@media (max-width:1024px){
-  .shell{grid-template-columns:1fr}
-  .side{display:none}
-  .topbar{display:flex;position:sticky;top:0;z-index:20;align-items:center;gap:16px;padding:12px var(--pad);background:var(--side);color:var(--side-ink)}
-  .topbar .who b{font-size:16px}
-  .topbar .mono{width:36px;height:36px;font-size:15px;border-radius:8px}
-  .topbar nav{display:flex;gap:4px;margin-left:auto;overflow-x:auto;scrollbar-width:none}
-  .topbar nav::-webkit-scrollbar{display:none}
-  .topbar nav a{text-decoration:none;font-size:14px;padding:6px 10px;border-radius:6px;color:var(--side-muted);white-space:nowrap}
-  .topbar nav a.on{color:#fff;background:rgba(255,255,255,.08)}
-  html{scroll-padding-top:72px}
-}
-@media (max-width:820px){
-  .intro,.about{grid-template-columns:1fr}
-  .case-head{grid-template-columns:1fr}
-  .idx thead{display:none}
-  .idx,.idx tbody,.idx tr,.idx td{display:block;width:100%}
-  .idx tr{padding:14px 16px;border-bottom:1px solid var(--line)}
-  .idx tr:last-child{border-bottom:0}
-  .idx td{padding:2px 0;border:0}
-  .idx .res{margin-top:6px}
-}
-@media (max-width:640px){
-  body{font-size:16px}
-  .topbar .who > div:last-child{display:none}
-  .stats{grid-template-columns:1fr}
-  .stat{grid-template-columns:120px 1fr;gap:14px}
-  .stat b{font-size:22px;white-space:normal}
-  .media{grid-template-columns:1fr}
-  .shot.half{grid-column:1/-1}
-  .facts,.stack{grid-template-columns:1fr}
-  .facts div:nth-child(odd),.stack div:nth-child(odd){padding-right:0}
-}
-</style>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;900&family=Pixelify+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="estilo.css">
 </head>
 <body>
 
-<header class="topbar">
-  <div class="who"><div class="mono" aria-hidden="true">FS</div><div><b>Felipe Santana</b></div></div>
-  <nav aria-label="Seções">
-    <a href="#projetos">Projetos</a>
-    <a href="#olist">Olist</a>
-    <a href="#energia">Energia</a>
-    <a href="#varejo">Varejo</a>
-    <a href="#knime">KNIME</a>
-    <a href="#sobre">Sobre</a>
+<canvas id="sea" aria-hidden="true"></canvas>
+
+<header class="hud-top">
+  <div class="card pbox">
+    <h1>Felipe Santana</h1>
+    <p>Analista de Dados em São Paulo</p>
+  </div>
+  <nav class="links" aria-label="Atalhos">
+    <button class="pbtn" type="button" data-open="lista">Ver projetos em lista</button>
+    <a class="pbtn alt" href="https://www.linkedin.com/in/felipe-gabriel-coelho-de-santana-a33b49304">LinkedIn</a>
+    <a class="pbtn alt" href="https://github.com/santana7o">GitHub</a>
   </nav>
 </header>
 
-<div class="shell">
+<div id="labels"></div>
 
-<aside class="side">
-  <div class="who"><div class="mono" aria-hidden="true">FS</div><div><b>Felipe Santana</b><span>Analista de Dados</span></div></div>
-  <p class="pitch">Em São Paulo. Tecnólogo em Ciência de Dados pela FIAP. Projetos ponta a ponta com dados públicos e reais, da pergunta de negócio à recomendação.</p>
-  <nav aria-label="Seções">
-    <a href="#projetos"><strong>Visão geral</strong><small>Os 4 projetos em uma tabela</small></a>
-    <p class="group">Projetos</p>
-    <a href="#olist"><strong>Atraso x satisfação</strong><small>Olist, Python, dbt, Tableau</small></a>
-    <a href="#energia"><strong>Preço da energia</strong><small>ONS, Python, dbt, Tableau</small></a>
-    <a href="#varejo"><strong>Varejo online em SQL</strong><small>DuckDB, SQL, CI</small></a>
-    <a href="#knime"><strong>Nota ruim e RFM</strong><small>Olist, KNIME, machine learning</small></a>
-    <p class="group">Sobre mim</p>
-    <a href="#sobre"><strong>Formação e ferramentas</strong><small>Como trabalho</small></a>
-  </nav>
-  <div class="side-foot">
-    <a class="primary" href="https://www.linkedin.com/in/felipe-gabriel-coelho-de-santana-a33b49304">LinkedIn</a>
-    <a href="https://github.com/santana7o">GitHub</a>
-    <small>Aberto a vagas júnior de Analista de Dados e BI.</small>
-  </div>
-</aside>
+<p class="hint pbox" id="hint">Clique no mar ou use as setas para navegar. Clique numa ilha para atracar e ver o projeto.</p>
+<button class="pbtn" id="dock" type="button" hidden><span>Atracar</span> <kbd>E</kbd></button>
 
-<main>
-<div class="inner">
+<nav class="isles pbox" aria-label="Ilhas">
+  <span>Ilhas</span>
+  <button class="pbtn small alt" type="button" data-sail="olist" style="--c:#e8743b"><i></i>Porto Olist</button>
+  <button class="pbtn small alt" type="button" data-sail="energia" style="--c:#49c2c9"><i></i>Ilha dos Ventos</button>
+  <button class="pbtn small alt" type="button" data-sail="varejo" style="--c:#e86a8a"><i></i>Ilha do Mercado</button>
+  <button class="pbtn small alt" type="button" data-sail="knime" style="--c:#4f9a43"><i></i>Floresta Aleatória</button>
+  <button class="pbtn small alt" type="button" data-sail="sobre" style="--c:#f2c94c"><i></i>Ilha do Farol</button>
+</nav>
 
-<section class="intro">
-  <div>
-    <h1>Da pergunta de negócio ao dashboard.</h1>
-    <p class="lede">Coleto e limpo os dados em Python, modelo e testo em SQL e entrego a resposta em um painel com recomendações práticas. Cada projeto abaixo tem o código completo no GitHub e pode ser reproduzido do zero.</p>
-  </div>
-  <dl class="facts">
-    <div><dt>Projetos publicados</dt><dd>4</dd></div>
-    <div><dt>Maior base analisada</dt><dd>1 milhão de linhas</dd></div>
-    <div><dt>Testes automáticos de dados</dt><dd>109</dd></div>
-    <div><dt>Formação</dt><dd>FIAP, 2024–2026</dd></div>
-  </dl>
-</section>
+<canvas id="mini" aria-label="Mapa do arquipélago" role="img"></canvas>
 
-<section class="index" id="projetos">
-  <h2 class="sec-title">Projetos</h2>
-  <p class="sec-sub">Clique em uma linha para ir ao estudo de caso.</p>
-  <table class="idx">
-    <thead><tr><th>Pergunta</th><th>Base</th><th>Ferramentas</th><th>Resultado principal</th></tr></thead>
-    <tbody>
-      <tr data-href="#olist"><td><a href="#olist">Atrasos na entrega derrubam a satisfação do cliente?</a></td><td>96 mil pedidos, Olist</td><td class="tools">Python, DuckDB, dbt, SQL, Tableau</td><td class="res">4,3 para 2,3<small>nota média de adiantado para 4 a 7 dias de atraso</small></td></tr>
-      <tr data-href="#energia"><td><a href="#energia">Por que a energia fica cara quando para de chover?</a></td><td>240 mil registros horários, ONS</td><td class="tools">Python, DuckDB, dbt, SQL, Tableau</td><td class="res">5,6x<small>mais cara com reservatório abaixo de 40%</small></td></tr>
-      <tr data-href="#varejo"><td><a href="#varejo">O e-commerce está crescendo de forma saudável?</a></td><td>1 milhão de linhas, UCI</td><td class="tools">SQL, DuckDB, Python, Excel, GitHub Actions</td><td class="res">£42 a 80 mil<small>por ano a cada 10 p.p. de reativação</small></td></tr>
-      <tr data-href="#knime"><td><a href="#knime">Dá para prever quem vai dar nota ruim?</a></td><td>96 mil pedidos, Olist</td><td class="tools">KNIME, RFM, k-Means, Random Forest</td><td class="res">74%<small>dos atrasados avaliam antes de receber</small></td></tr>
-    </tbody>
-  </table>
-</section>
-
-<article class="case" id="olist">
-  <header class="case-head">
-    <div>
-      <p class="kicker">E-commerce</p>
-      <h2>Atrasos na entrega derrubam a satisfação do cliente?</h2>
-      <p class="lede">96 mil pedidos do marketplace Olist, de jan/2017 a ago/2018. Quanto o atraso pesa na nota do cliente, onde o problema é mais grave e quanta receita está envolvida.</p>
-      <ul class="tags"><li>Python</li><li>pandas</li><li>DuckDB</li><li>dbt</li><li>SQL</li><li>Tableau</li></ul>
+<div class="wrap" id="wrap" hidden>
+  <div class="scrim" data-close></div>
+  <section class="sheet" id="sheet" role="dialog" aria-modal="true">
+    <div class="bar">
+      <p class="crumb" id="crumb"></p>
+      <button class="pbtn small" type="button" id="close">Voltar ao mar</button>
     </div>
-    <div class="actions">
-      <a class="btn solid" href="https://public.tableau.com/app/profile/felipe.gabriel.coelho.de.santana/viz/olist_dashboard_final/DashboardOlist">Abrir dashboard</a>
-      <a class="btn" href="https://github.com/santana7o/olist-ecommerce-analytics">Ver código</a>
-    </div>
-  </header>
-  <div class="case-body">
-    <div class="case-text">
-      <div class="stats">
-        <div class="stat"><b>4,3 → 2,3</b><span>Nota média quando o pedido chega adiantado contra 4 a 7 dias de atraso</span></div>
-        <div class="stat"><b>54%</b><span>dos pedidos atrasados recebem nota 1 ou 2, contra 9% dos pontuais</span></div>
-        <div class="stat"><b>R$ 1,15 mi</b><span>em vendas passaram por pedidos atrasados no período</span></div>
+
+    <!-- LISTA -->
+    <article class="proj" data-id="lista" data-name="Todos os projetos" style="--c:#f2c94c" hidden>
+      <div class="title">
+        <span class="tag px">Mapa do arquipélago</span>
+        <h2 id="h-lista">Todos os projetos</h2>
       </div>
-      <h3>O que os dados mostram</h3>
-      <ul class="findings">
-        <li><strong>A nota despenca a partir de 4 dias de atraso.</strong> Até 3 dias o cliente ainda tolera (3,75); depois cai para 2,30 e, com 8 dias ou mais, para 1,73.</li>
-        <li><strong>O Nordeste atrasa 14,3% dos pedidos,</strong> o dobro do Sul (7,0%).</li>
-        <li><strong>Móveis de escritório</strong> é a categoria com a pior nota (3,66).</li>
-        <li><strong>Métricas por pedido, não por item,</strong> para não inflar médias em pedidos com vários produtos.</li>
-      </ul>
-      <div class="reco">
-        <h3>Recomendações</h3>
-        <ul>
-          <li>Prazos prometidos mais realistas para o Nordeste e o RJ.</li>
-          <li>Alerta operacional a partir de 4 dias de atraso.</li>
-          <li>Investigar a operação de móveis de escritório.</li>
+      <div class="body">
+        <p class="lede">Quatro projetos ponta a ponta com dados públicos e reais, da pergunta de negócio à recomendação. Cada um tem o código completo no GitHub e pode ser reproduzido do zero.</p>
+        <div class="cards">
+          <div class="pcard pbox" style="--c:#e8743b"><span class="tag">Porto Olist</span><h3 class="px">Atrasos na entrega derrubam a satisfação do cliente?</h3><p>96 mil pedidos da Olist. Python, DuckDB, dbt, SQL, Tableau.</p><p class="res">4,3 para 2,3<small>nota média de adiantado para 4 a 7 dias de atraso</small></p><div class="row"><button class="pbtn small" type="button" data-open="olist">Abrir projeto</button><button class="pbtn small alt" type="button" data-sail="olist">Navegar até a ilha</button></div></div>
+          <div class="pcard pbox" style="--c:#49c2c9"><span class="tag">Ilha dos Ventos</span><h3 class="px">Por que a energia fica cara quando para de chover?</h3><p>240 mil registros horários do ONS. Python, DuckDB, dbt, SQL, Tableau.</p><p class="res">5,6x<small>mais cara com reservatório abaixo de 40%</small></p><div class="row"><button class="pbtn small" type="button" data-open="energia">Abrir projeto</button><button class="pbtn small alt" type="button" data-sail="energia">Navegar até a ilha</button></div></div>
+          <div class="pcard pbox" style="--c:#e86a8a"><span class="tag">Ilha do Mercado</span><h3 class="px">O e-commerce está crescendo de forma saudável?</h3><p>1 milhão de linhas de vendas. SQL, DuckDB, Python, Excel, GitHub Actions.</p><p class="res">£42 a 80 mil<small>por ano a cada 10 p.p. de reativação de clientes</small></p><div class="row"><button class="pbtn small" type="button" data-open="varejo">Abrir projeto</button><button class="pbtn small alt" type="button" data-sail="varejo">Navegar até a ilha</button></div></div>
+          <div class="pcard pbox" style="--c:#4f9a43"><span class="tag">Floresta Aleatória</span><h3 class="px">Dá para prever quem vai dar nota ruim?</h3><p>96 mil pedidos da Olist. KNIME, RFM, k-Means, Random Forest.</p><p class="res">74%<small>dos pedidos atrasados são avaliados antes de chegar</small></p><div class="row"><button class="pbtn small" type="button" data-open="knime">Abrir projeto</button><button class="pbtn small alt" type="button" data-sail="knime">Navegar até a ilha</button></div></div>
+        </div>
+        <div class="next"><p>Quer saber mais sobre mim?</p><button class="pbtn" type="button" data-open="sobre">Ilha do Farol: sobre mim</button></div>
+      </div>
+    </article>
+
+    <!-- OLIST -->
+    <article class="proj" data-id="olist" data-name="Porto Olist" style="--c:#e8743b" hidden>
+      <div class="scene" data-postcard="olist"></div>
+      <div class="title">
+        <span class="tag">Porto Olist · E-commerce</span>
+        <h2 id="h-olist">Atrasos na entrega derrubam a satisfação do cliente?</h2>
+      </div>
+      <div class="body">
+        <p class="lede">96 mil pedidos do marketplace Olist, de jan/2017 a ago/2018. Quanto o atraso pesa na nota do cliente, onde o problema é mais grave e quanta receita está envolvida.</p>
+        <ul class="chips"><li>Python</li><li>pandas</li><li>DuckDB</li><li>dbt</li><li>SQL</li><li>Tableau</li></ul>
+        <div class="actions">
+          <a class="pbtn" href="https://public.tableau.com/app/profile/felipe.gabriel.coelho.de.santana/viz/olist_dashboard_final/DashboardOlist">Abrir dashboard</a>
+          <a class="pbtn alt" href="https://github.com/santana7o/olist-ecommerce-analytics">Ver código no GitHub</a>
+        </div>
+        <div class="stats">
+          <div class="stat pbox"><b>4,3 → 2,3</b><span>Nota média quando o pedido chega adiantado contra 4 a 7 dias de atraso</span></div>
+          <div class="stat pbox"><b>54%</b><span>dos pedidos atrasados recebem nota 1 ou 2, contra 9% dos pontuais</span></div>
+          <div class="stat pbox"><b>R$ 1,15 mi</b><span>em vendas passaram por pedidos atrasados no período</span></div>
+        </div>
+        <h3>O que os dados mostram</h3>
+        <ul class="dots">
+          <li><strong>A nota despenca a partir de 4 dias de atraso.</strong> Até 3 dias o cliente ainda tolera (3,75); depois cai para 2,30 e, com 8 dias ou mais, para 1,73.</li>
+          <li><strong>O Nordeste atrasa 14,3% dos pedidos,</strong> o dobro do Sul (7,0%).</li>
+          <li><strong>Móveis de escritório</strong> é a categoria com a pior nota (3,66).</li>
+          <li><strong>Métricas por pedido, não por item,</strong> para não inflar médias em pedidos com vários produtos.</li>
         </ul>
+        <div class="reco pbox">
+          <h3>Recomendações</h3>
+          <ul class="dots">
+            <li>Prazos prometidos mais realistas para o Nordeste e o RJ.</li>
+            <li>Alerta operacional a partir de 4 dias de atraso, onde a nota desaba.</li>
+            <li>Investigar a operação de móveis de escritório.</li>
+          </ul>
+        </div>
+        <div class="pics">
+          <figure class="wide"><img src="img/olist_visao_geral.jpg" width="1399" height="926" loading="lazy" alt="Dashboard Olist com KPIs, mapa de atraso por estado, nota por faixa de atraso, pedidos por mês e nota por categoria"><figcaption>Visão geral do painel com todos os pedidos entregues.</figcaption></figure>
+          <figure><img src="img/olist_nota_atraso.jpg" width="691" height="328" loading="lazy" alt="Gráfico de barras da nota média por faixa de atraso"><figcaption>Nota média por faixa de atraso.</figcaption></figure>
+          <figure><img src="img/olist_nordeste.jpg" width="1399" height="926" loading="lazy" alt="Dashboard Olist filtrado para a região Nordeste"><figcaption>Painel filtrado para o Nordeste: 14,3% de atraso e nota 3,97.</figcaption></figure>
+        </div>
+        <div class="next"><p>Próxima ilha: mesma arquitetura, outro setor.</p><button class="pbtn" type="button" data-sail="energia">Navegar até a Ilha dos Ventos</button></div>
       </div>
-    </div>
-    <div class="media">
-      <figure class="shot"><div class="frame"><a href="https://public.tableau.com/app/profile/felipe.gabriel.coelho.de.santana/viz/olist_dashboard_final/DashboardOlist"><img src="img/olist_visao_geral.jpg" width="1399" height="926" alt="Dashboard Olist com KPIs, mapa de atraso por estado, nota por faixa de atraso, pedidos por mês e nota por categoria"></a></div><figcaption>Visão geral do painel com todos os pedidos entregues.</figcaption></figure>
-      <figure class="shot half"><div class="frame"><img src="img/olist_nota_atraso.jpg" width="691" height="328" alt="Gráfico de barras da nota média por faixa de atraso" loading="lazy"></div><figcaption>Nota média por faixa de atraso.</figcaption></figure>
-      <figure class="shot half"><div class="frame"><img src="img/olist_nordeste.jpg" width="1399" height="926" alt="Dashboard Olist filtrado para a região Nordeste" loading="lazy"></div><figcaption>Painel filtrado para o Nordeste: 14,3% de atraso e nota 3,97.</figcaption></figure>
-    </div>
-  </div>
-</article>
+    </article>
 
-<article class="case" id="energia">
-  <header class="case-head">
-    <div>
-      <p class="kicker">Setor elétrico</p>
-      <h2>Por que a energia fica cara quando para de chover?</h2>
-      <p class="lede">Seis anos de dados horários abertos do ONS, cerca de 240 mil registros de 2020 até hoje, cruzando custo da energia, nível dos reservatórios, chuva e geração por fonte nas quatro regiões do país.</p>
-      <ul class="tags"><li>Python</li><li>DuckDB</li><li>dbt</li><li>SQL</li><li>Tableau</li><li>Dados abertos</li></ul>
-    </div>
-    <div class="actions">
-      <a class="btn solid" href="https://public.tableau.com/app/profile/felipe.gabriel.coelho.de.santana/viz/energia_dashboard/Preo">Abrir dashboard</a>
-      <a class="btn" href="https://github.com/santana7o/energia-brasil-analytics">Ver código</a>
-    </div>
-  </header>
-  <div class="case-body">
-    <div class="case-text">
-      <div class="stats">
-        <div class="stat"><b>5,6x</b><span>mais cara com reservatório do Sudeste abaixo de 40% (R$ 435/MWh) do que acima de 60% (R$ 78)</span></div>
-        <div class="stat"><b>R$ 56 → 378</b><span>custo ao meio-dia contra às 18h no ano atual, a "curva do pato" da energia solar</span></div>
-        <div class="stat"><b>20%</b><span>das horas deste ano com custo zero, por sobra de geração renovável</span></div>
+    <!-- ENERGIA -->
+    <article class="proj" data-id="energia" data-name="Ilha dos Ventos" style="--c:#49c2c9" hidden>
+      <div class="scene" data-postcard="energia"></div>
+      <div class="title">
+        <span class="tag">Ilha dos Ventos · Setor elétrico</span>
+        <h2 id="h-energia">Por que a energia fica cara quando para de chover?</h2>
       </div>
-      <h3>O que os dados mostram</h3>
-      <ul class="findings">
-        <li><strong>O preço ainda é função da água.</strong> A correlação mensal entre reservatório e preço no Sudeste é de −0,45.</li>
-        <li><strong>Crise hídrica de ago/2021:</strong> custo acima de R$ 3.000/MWh, reservatórios em 24% e chuva a 59% da média.</li>
-        <li><strong>A solar saiu de 0,9% para 14,2%</strong> da geração e já mudou o formato do dia.</li>
-        <li><strong>42 testes dbt</strong> garantem, por exemplo, que o balanço energético fecha e que não há hora duplicada.</li>
-      </ul>
-      <div class="reco">
-        <h3>Na prática</h3>
-        <ul>
-          <li>Quem compra energia pode acompanhar os reservatórios para se antecipar aos picos de preço.</li>
-          <li>Quem consome muito pode economizar deslocando consumo para o meio do dia.</li>
+      <div class="body">
+        <p class="lede">Seis anos de dados horários abertos do ONS, cerca de 240 mil registros de 2020 até hoje, cruzando custo da energia, nível dos reservatórios, chuva e geração por fonte nas quatro regiões do país.</p>
+        <ul class="chips"><li>Python</li><li>DuckDB</li><li>dbt</li><li>SQL</li><li>Tableau</li><li>Dados abertos</li></ul>
+        <div class="actions">
+          <a class="pbtn" href="https://public.tableau.com/app/profile/felipe.gabriel.coelho.de.santana/viz/energia_dashboard/Preo">Abrir dashboard</a>
+          <a class="pbtn alt" href="https://github.com/santana7o/energia-brasil-analytics">Ver código no GitHub</a>
+        </div>
+        <div class="stats">
+          <div class="stat pbox"><b>5,6x</b><span>mais cara com reservatório do Sudeste abaixo de 40% (R$ 435/MWh) do que acima de 60% (R$ 78)</span></div>
+          <div class="stat pbox"><b>R$ 56 → 378</b><span>custo ao meio-dia contra às 18h no ano atual, a "curva do pato" da energia solar</span></div>
+          <div class="stat pbox"><b>20%</b><span>das horas deste ano com custo zero, por sobra de geração renovável</span></div>
+        </div>
+        <h3>O que os dados mostram</h3>
+        <ul class="dots">
+          <li><strong>O preço ainda é função da água.</strong> A correlação mensal entre reservatório e preço no Sudeste é de −0,45.</li>
+          <li><strong>Crise hídrica de ago/2021:</strong> custo acima de R$ 3.000/MWh, reservatórios em 24% e chuva a 59% da média.</li>
+          <li><strong>A solar saiu de 0,9% para 14,2%</strong> da geração e já mudou o formato do dia.</li>
+          <li><strong>42 testes dbt</strong> garantem, por exemplo, que o balanço energético fecha e que não há hora duplicada.</li>
         </ul>
+        <div class="reco pbox">
+          <h3>Na prática</h3>
+          <ul class="dots">
+            <li>Quem compra energia pode acompanhar os reservatórios para se antecipar aos picos de preço.</li>
+            <li>Quem consome muito pode economizar deslocando consumo para o meio do dia.</li>
+          </ul>
+        </div>
+        <div class="pics">
+          <figure class="wide"><img src="img/energia_preco.jpg" width="1600" height="1001" loading="lazy" alt="Dashboard Energia no Brasil, página Preço, com CMO mensal e CMO por hora do dia"><figcaption>Página Preço: custo mensal da energia e o formato do preço ao longo do dia.</figcaption></figure>
+          <figure><img src="img/energia_matriz.jpg" width="1600" height="1001" loading="lazy" alt="Dashboard Energia no Brasil, página Matriz"><figcaption>Matriz: geração por fonte.</figcaption></figure>
+          <figure><img src="img/energia_reservatorios.jpg" width="1600" height="1001" loading="lazy" alt="Dashboard Energia no Brasil, página Reservatórios"><figcaption>Reservatórios: nível e chuva por região.</figcaption></figure>
+        </div>
+        <div class="next"><p>Próxima ilha: do setor elétrico ao varejo.</p><button class="pbtn" type="button" data-sail="varejo">Navegar até a Ilha do Mercado</button></div>
       </div>
-    </div>
-    <div class="media">
-      <figure class="shot"><div class="frame"><a href="https://public.tableau.com/app/profile/felipe.gabriel.coelho.de.santana/viz/energia_dashboard/Preo"><img src="img/energia_preco.jpg" width="1600" height="1001" alt="Dashboard Energia no Brasil, página Preço, com CMO mensal e CMO por hora do dia" loading="lazy"></a></div><figcaption>Página Preço: custo mensal da energia e o formato do preço ao longo do dia.</figcaption></figure>
-      <figure class="shot half"><div class="frame"><img src="img/energia_matriz.jpg" width="1600" height="1001" alt="Dashboard Energia no Brasil, página Matriz" loading="lazy"></div><figcaption>Matriz: geração por fonte.</figcaption></figure>
-      <figure class="shot half"><div class="frame"><img src="img/energia_reservatorios.jpg" width="1600" height="1001" alt="Dashboard Energia no Brasil, página Reservatórios" loading="lazy"></div><figcaption>Reservatórios: nível e chuva por região.</figcaption></figure>
-    </div>
-  </div>
-</article>
+    </article>
 
-<article class="case" id="varejo">
-  <header class="case-head">
-    <div>
-      <p class="kicker">Varejo</p>
-      <h2>O e-commerce está crescendo de forma saudável?</h2>
-      <p class="lede">1 milhão de linhas de vendas reais de um e-commerce de presentes do Reino Unido, de dez/2009 a dez/2011. De onde vem a receita, quais clientes sustentam o negócio e quanto vale reativar quem está sumindo.</p>
-      <ul class="tags"><li>SQL</li><li>DuckDB</li><li>Python</li><li>Excel</li><li>GitHub Actions</li></ul>
-    </div>
-    <div class="actions">
-      <a class="btn solid" href="https://santana7o.github.io/varejo-online-sql/">Abrir dashboard</a>
-      <a class="btn" href="https://github.com/santana7o/varejo-online-sql">Ver código</a>
-    </div>
-  </header>
-  <div class="case-body">
-    <div class="case-text">
-      <div class="stats">
-        <div class="stat"><b>+2,5%</b><span>de receita no ano 2, com 4% menos pedidos: o crescimento veio só do ticket médio</span></div>
-        <div class="stat"><b>94%</b><span>dos clientes Campeões voltaram no ano seguinte e geraram 68% da receita, validando a segmentação</span></div>
-        <div class="stat"><b>£42-80 mil</b><span>por ano a cada 10 pontos percentuais de reativação do segmento Em risco</span></div>
+    <!-- VAREJO -->
+    <article class="proj" data-id="varejo" data-name="Ilha do Mercado" style="--c:#e86a8a" hidden>
+      <div class="scene" data-postcard="varejo"></div>
+      <div class="title">
+        <span class="tag">Ilha do Mercado · Varejo</span>
+        <h2 id="h-varejo">O e-commerce está crescendo de forma saudável?</h2>
       </div>
-      <h3>O que os dados mostram</h3>
-      <ul class="findings">
-        <li><strong>A aquisição caiu 36%:</strong> 600 clientes novos em set-nov/2011 contra 940 no ano anterior. Cerca de 90% da receita vem de quem já era cliente.</li>
-        <li><strong>22% dos clientes geram 64% da receita.</strong> O RFM foi aplicado em dez/2010 e comparado com o ano seguinte, e a ordem dos segmentos se manteve.</li>
-        <li><strong>Clientes "Em risco" voltam, mas gastam metade:</strong> 62% compraram de novo, com receita por cliente 47% menor.</li>
-        <li><strong>10 testes de dados e CI no GitHub Actions</strong> refazem tudo do zero a cada mudança.</li>
-      </ul>
-      <div class="reco">
-        <h3>Recomendações</h3>
-        <ul>
-          <li>Reativação antes do pico de fim de ano, começando pelos 103 clientes que concentram metade da receita em risco.</li>
-          <li>Atendimento dedicado aos Campeões, com alerta após 30 dias sem compra.</li>
-          <li>Investigar a queda de aquisição antes que a base encolha.</li>
+      <div class="body">
+        <p class="lede">1 milhão de linhas de vendas reais de um e-commerce de presentes do Reino Unido, de dez/2009 a dez/2011. De onde vem a receita, quais clientes sustentam o negócio e quanto vale reativar quem está sumindo.</p>
+        <ul class="chips"><li>SQL</li><li>DuckDB</li><li>Python</li><li>Excel</li><li>GitHub Actions</li></ul>
+        <div class="actions">
+          <a class="pbtn" href="https://santana7o.github.io/varejo-online-sql/">Abrir dashboard</a>
+          <a class="pbtn alt" href="https://github.com/santana7o/varejo-online-sql">Ver código no GitHub</a>
+        </div>
+        <div class="stats">
+          <div class="stat pbox"><b>+2,5%</b><span>de receita no ano 2, com 4% menos pedidos: o crescimento veio só do ticket médio</span></div>
+          <div class="stat pbox"><b>94%</b><span>dos clientes Campeões voltaram no ano seguinte e geraram 68% da receita, validando a segmentação</span></div>
+          <div class="stat pbox"><b>£42-80 mil</b><span>por ano a cada 10 pontos percentuais de reativação do segmento Em risco</span></div>
+        </div>
+        <h3>O que os dados mostram</h3>
+        <ul class="dots">
+          <li><strong>A aquisição caiu 36%:</strong> 600 clientes novos em set-nov/2011 contra 940 no ano anterior. Cerca de 90% da receita vem de quem já era cliente.</li>
+          <li><strong>22% dos clientes geram 64% da receita.</strong> O RFM foi aplicado em dez/2010 e comparado com o ano seguinte, e a ordem dos segmentos se manteve.</li>
+          <li><strong>Clientes "Em risco" voltam, mas gastam metade:</strong> 62% compraram de novo, com receita por cliente 47% menor.</li>
+          <li><strong>10 testes de dados e CI no GitHub Actions</strong> refazem tudo do zero a cada mudança e conferem os resultados publicados.</li>
         </ul>
+        <div class="reco pbox">
+          <h3>Recomendações</h3>
+          <ul class="dots">
+            <li>Reativação antes do pico de fim de ano, começando pelos 103 clientes que concentram metade da receita em risco.</li>
+            <li>Atendimento dedicado aos Campeões, com alerta após 30 dias sem compra.</li>
+            <li>Investigar a queda de aquisição antes que a base existente encolha.</li>
+          </ul>
+        </div>
+        <div class="pics">
+          <figure class="wide"><img src="img/varejo_simulador.jpg" width="1040" height="514" loading="lazy" alt="Simulador da campanha de reativação: 10 pontos percentuais a mais reativam 65 clientes e geram de 42 a 80 mil libras"><figcaption>Simulador do dashboard: quanto vale reativar os clientes "Em risco".</figcaption></figure>
+          <figure><img src="img/varejo_validacao_rfm.jpg" width="1566" height="702" loading="lazy" alt="Receita por cliente de cada segmento RFM antes e depois de dez/2010"><figcaption>Validação do RFM: receita por cliente antes e depois.</figcaption></figure>
+          <figure><img src="img/varejo_coortes.jpg" width="1528" height="776" loading="lazy" alt="Mapa de calor da retenção mensal por coorte de primeira compra em 2010"><figcaption>Retenção por coorte: quem entra no fim do ano volta no Natal seguinte.</figcaption></figure>
+        </div>
+        <div class="next"><p>Próxima ilha: os dados da Olist, agora com machine learning.</p><button class="pbtn" type="button" data-sail="knime">Navegar até a Floresta Aleatória</button></div>
       </div>
-    </div>
-    <div class="media">
-      <figure class="shot"><div class="frame"><a href="https://santana7o.github.io/varejo-online-sql/"><img src="img/varejo_simulador.jpg" width="1040" height="514" alt="Simulador da campanha de reativação: 10 pontos percentuais a mais reativam 65 clientes e geram de 42 a 80 mil libras" loading="lazy"></a></div><figcaption>Simulador do dashboard: quanto vale reativar os clientes "Em risco".</figcaption></figure>
-      <figure class="shot half"><div class="frame"><img src="img/varejo_validacao_rfm.jpg" width="1566" height="702" alt="Receita por cliente de cada segmento RFM antes e depois de dez/2010" loading="lazy"></div><figcaption>Validação do RFM: receita por cliente antes e depois.</figcaption></figure>
-      <figure class="shot half"><div class="frame"><img src="img/varejo_coortes.jpg" width="1528" height="776" alt="Mapa de calor da retenção mensal por coorte de primeira compra em 2010" loading="lazy"></div><figcaption>Retenção por coorte: quem entra no fim do ano volta no Natal seguinte.</figcaption></figure>
-    </div>
-  </div>
-</article>
+    </article>
 
-<article class="case" id="knime">
-  <header class="case-head">
-    <div>
-      <p class="kicker">E-commerce e machine learning</p>
-      <h2>Dá para prever quem vai dar nota ruim?</h2>
-      <p class="lede">Os mesmos 96 mil pedidos da Olist, em quatro workflows do KNIME só com nós nativos: ETL, segmentação RFM com k-Means, modelo de avaliação ruim e painel de indicadores. Aqui a definição de atraso foi corrigida (data contra data), e a taxa cai de 8,1% para 6,8%.</p>
-      <ul class="tags"><li>KNIME</li><li>ETL</li><li>RFM</li><li>k-Means</li><li>Random Forest</li><li>Decision Tree</li></ul>
-    </div>
-    <div class="actions">
-      <a class="btn solid" href="https://github.com/santana7o/olist-knime-portfolio">Ver código</a>
-      <a class="btn" href="https://github.com/santana7o/olist-knime-portfolio/releases">Baixar workflows</a>
-    </div>
-  </header>
-  <div class="case-body">
-    <div class="case-text">
-      <div class="stats">
-        <div class="stat"><b>74%</b><span>dos pedidos atrasados foram avaliados antes da entrega, e 75% dessas avaliações são ruins</span></div>
-        <div class="stat"><b>31%</b><span>da receita vem dos "Inativos de alto valor", 16% dos clientes, sem comprar há mais de um ano</span></div>
-        <div class="stat"><b>8x</b><span>mais avaliações ruins encontradas pelo Random Forest do que pela regra "atrasou = ruim"</span></div>
+    <!-- KNIME -->
+    <article class="proj" data-id="knime" data-name="Floresta Aleatória" style="--c:#7cc95a" hidden>
+      <div class="scene" data-postcard="knime"></div>
+      <div class="title">
+        <span class="tag">Floresta Aleatória · Machine learning</span>
+        <h2 id="h-knime">Dá para prever quem vai dar nota ruim?</h2>
       </div>
-      <h3>O que os dados mostram</h3>
-      <ul class="findings">
-        <li><strong>A pesquisa de satisfação sai perto da data prometida.</strong> 94% das avaliações feitas antes da entrega foram criadas na data prometida ou depois.</li>
-        <li><strong>97% dos clientes compraram uma única vez.</strong> Por isso a frequência do RFM virou binária e o valor recebeu log antes do k-Means.</li>
-        <li><strong>Modelo sem vazamento:</strong> o Random Forest sinaliza 15% dos pedidos e encontra 35% das notas ruins, com AUC de 0,66.</li>
-        <li><strong>Limiar escolhido na validação, métricas só no teste,</strong> com partição estratificada 60/20/20.</li>
-      </ul>
-      <div class="reco">
-        <h3>Recomendações</h3>
-        <ul>
-          <li>Disparar a pesquisa na entrega confirmada, e não na data prometida.</li>
-          <li>Avisar antes do prazo os clientes com pedido em risco de atraso.</li>
-          <li>Reativar os Inativos de alto valor, com ticket médio de R$ 317.</li>
+      <div class="body">
+        <p class="lede">Os mesmos 96 mil pedidos da Olist, em quatro workflows do KNIME só com nós nativos: ETL, segmentação RFM com k-Means, modelo de avaliação ruim e painel de indicadores. Aqui a definição de atraso foi corrigida (data contra data), e a taxa cai de 8,1% para 6,8%.</p>
+        <ul class="chips"><li>KNIME</li><li>ETL</li><li>RFM</li><li>k-Means</li><li>Random Forest</li><li>Decision Tree</li></ul>
+        <div class="actions">
+          <a class="pbtn" href="https://github.com/santana7o/olist-knime-portfolio">Ver código no GitHub</a>
+          <a class="pbtn alt" href="https://github.com/santana7o/olist-knime-portfolio/releases">Baixar os workflows</a>
+        </div>
+        <div class="stats">
+          <div class="stat pbox"><b>74%</b><span>dos pedidos atrasados foram avaliados antes da entrega, e 75% dessas avaliações são ruins</span></div>
+          <div class="stat pbox"><b>31%</b><span>da receita vem dos "Inativos de alto valor", 16% dos clientes, sem comprar há mais de um ano</span></div>
+          <div class="stat pbox"><b>8x</b><span>mais avaliações ruins encontradas pelo Random Forest do que pela regra "atrasou = ruim"</span></div>
+        </div>
+        <h3>O que os dados mostram</h3>
+        <ul class="dots">
+          <li><strong>A pesquisa de satisfação sai perto da data prometida.</strong> 94% das avaliações feitas antes da entrega foram criadas na data prometida ou depois dela.</li>
+          <li><strong>97% dos clientes compraram uma única vez.</strong> Por isso a frequência do RFM virou binária e o valor recebeu log antes do k-Means.</li>
+          <li><strong>Modelo sem vazamento:</strong> pedidos avaliados antes da entrega ficam de fora. O Random Forest sinaliza 15% dos pedidos e encontra 35% das notas ruins, com AUC de 0,66.</li>
+          <li><strong>Limiar escolhido na validação, métricas só no teste,</strong> com partição estratificada 60/20/20.</li>
         </ul>
+        <div class="reco pbox">
+          <h3>Recomendações</h3>
+          <ul class="dots">
+            <li>Disparar a pesquisa na entrega confirmada, e não na data prometida.</li>
+            <li>Avisar antes do prazo os clientes cujo pedido corre risco de atrasar.</li>
+            <li>Campanha de reativação para os Inativos de alto valor, com ticket médio de R$ 317.</li>
+          </ul>
+        </div>
+        <div class="pics">
+          <figure class="wide"><img src="img/knime_avaliacao_antes.jpg" width="1600" height="900" loading="lazy" alt="Gráfico mostrando que 74% dos pedidos atrasados foram avaliados antes da entrega, com 75% de notas ruins"><figcaption>O achado central: quem recebe com atraso avalia enquanto ainda espera o produto.</figcaption></figure>
+          <figure><img src="img/knime_segmentos.jpg" width="1600" height="900" loading="lazy" alt="Gráfico de barras da receita por segmento RFM"><figcaption>Receita por segmento RFM.</figcaption></figure>
+          <figure><img src="img/knime_workflow_modelo.jpg" width="1270" height="650" loading="lazy" alt="Workflow do modelo de avaliação ruim no KNIME"><figcaption>Workflow do modelo: baseline, árvore de decisão e Random Forest no mesmo teste.</figcaption></figure>
+        </div>
+        <div class="next"><p>Fim da rota. Que tal conhecer o capitão?</p><button class="pbtn" type="button" data-sail="sobre">Navegar até a Ilha do Farol</button></div>
       </div>
-    </div>
-    <div class="media">
-      <figure class="shot"><div class="frame"><img src="img/knime_avaliacao_antes.jpg" width="1600" height="900" alt="Gráfico mostrando que 74% dos pedidos atrasados foram avaliados antes da entrega, com 75% de notas ruins" loading="lazy"></div><figcaption>O achado central: quem recebe com atraso avalia enquanto ainda espera o produto.</figcaption></figure>
-      <figure class="shot half"><div class="frame"><img src="img/knime_segmentos.jpg" width="1600" height="900" alt="Receita por segmento RFM" loading="lazy"></div><figcaption>Receita por segmento RFM.</figcaption></figure>
-      <figure class="shot half"><div class="frame"><img src="img/knime_workflow_modelo.jpg" width="1270" height="650" alt="Workflow do modelo de avaliação ruim no KNIME" loading="lazy"></div><figcaption>Workflow do modelo: baseline, árvore de decisão e Random Forest no mesmo teste.</figcaption></figure>
-    </div>
-  </div>
-</article>
+    </article>
 
-<section class="about" id="sobre">
-  <div>
-    <h2>Sobre</h2>
-    <p>Tecnólogo em Ciência de Dados pela FIAP (2024–2026), em São Paulo. Antes da área de dados, fiz estágio de suporte de TI, onde automatizei tarefas recorrentes e montei relatórios de indicadores internos.</p>
-    <p>Busco uma vaga de Analista de Dados ou BI júnior, com interesse especial nos setores financeiro e de seguros.</p>
-    <ol class="flow">
-      <li><div><b>Pergunta.</b> <span>Um problema de negócio com uma decisão em jogo.</span></div></li>
-      <li><div><b>Ingestão e limpeza.</b> <span>Perfil, tratamento e validação dos dados em Python.</span></div></li>
-      <li><div><b>Modelagem e testes.</b> <span>Camadas em DuckDB e dbt, com testes automáticos de qualidade.</span></div></li>
-      <li><div><b>Resposta.</b> <span>Dashboard com os achados e recomendações práticas.</span></div></li>
-    </ol>
-  </div>
-  <dl class="stack">
-    <div><dt>Linguagens</dt><dd>SQL, Python</dd></div>
-    <div><dt>Dados</dt><dd>pandas, DuckDB</dd></div>
-    <div><dt>Modelagem</dt><dd>dbt, modelo estrela</dd></div>
-    <div><dt>Visualização</dt><dd>Tableau, Power BI</dd></div>
-    <div><dt>Ferramentas</dt><dd>Git, Colab, DBeaver, KNIME</dd></div>
-    <div><dt>Também</dt><dd>Excel, ETL, machine learning</dd></div>
-  </dl>
-</section>
-
-<footer class="contact" id="contato">
-  <div>
-    <h2>Vamos conversar.</h2>
-    <p>Felipe Gabriel Coelho de Santana, Analista de Dados em São Paulo.</p>
-  </div>
-  <div class="actions">
-    <a class="btn solid" href="https://www.linkedin.com/in/felipe-gabriel-coelho-de-santana-a33b49304">LinkedIn</a>
-    <a class="btn" href="https://github.com/santana7o">GitHub</a>
-  </div>
-</footer>
-
-</div>
-</main>
+    <!-- SOBRE -->
+    <article class="proj" data-id="sobre" data-name="Ilha do Farol" style="--c:#f2c94c" hidden>
+      <div class="scene" data-postcard="sobre"></div>
+      <div class="title">
+        <span class="tag">Ilha do Farol · Sobre mim</span>
+        <h2 id="h-sobre">Felipe Gabriel Coelho de Santana</h2>
+      </div>
+      <div class="body">
+        <p class="lede">Analista de Dados em São Paulo, tecnólogo em Ciência de Dados pela FIAP (2024–2026). Antes da área de dados, fiz estágio de suporte de TI, onde automatizei tarefas recorrentes e montei relatórios de indicadores internos.</p>
+        <p class="lede" style="margin-top:12px">Busco uma vaga de Analista de Dados ou BI júnior, com interesse especial nos setores financeiro e de seguros.</p>
+        <div class="actions">
+          <a class="pbtn" href="https://www.linkedin.com/in/felipe-gabriel-coelho-de-santana-a33b49304">Falar comigo no LinkedIn</a>
+          <a class="pbtn alt" href="https://github.com/santana7o">Ver meu GitHub</a>
+        </div>
+        <h3>Como construo cada projeto</h3>
+        <ol class="flow">
+          <li><div><b>Pergunta.</b> Um problema de negócio com uma decisão em jogo.</div></li>
+          <li><div><b>Ingestão e limpeza.</b> Perfil, tratamento e validação dos dados em Python.</div></li>
+          <li><div><b>Modelagem e testes.</b> Camadas em DuckDB e dbt, com testes automáticos de qualidade.</div></li>
+          <li><div><b>Resposta.</b> Dashboard com os achados e recomendações práticas.</div></li>
+        </ol>
+        <h3>Ferramentas</h3>
+        <dl class="stack">
+          <div class="pbox"><dt>Linguagens</dt><dd>SQL, Python</dd></div>
+          <div class="pbox"><dt>Dados</dt><dd>pandas, DuckDB</dd></div>
+          <div class="pbox"><dt>Modelagem</dt><dd>dbt, modelo estrela</dd></div>
+          <div class="pbox"><dt>Visualização</dt><dd>Tableau, Power BI</dd></div>
+          <div class="pbox"><dt>Ferramentas</dt><dd>Git, Colab, DBeaver, KNIME</dd></div>
+          <div class="pbox"><dt>Também</dt><dd>Excel, ETL, machine learning</dd></div>
+        </dl>
+        <div class="next"><p>Comece pela primeira ilha.</p><button class="pbtn" type="button" data-sail="olist">Navegar até o Porto Olist</button></div>
+      </div>
+    </article>
+  </section>
 </div>
 
+<noscript>
+  <div style="position:fixed;inset:0;background:#fbf3df;padding:24px;overflow:auto;z-index:99">
+    <h1>Felipe Santana, Analista de Dados</h1>
+    <p>Este portfólio usa JavaScript para o mapa. Os projetos também estão no GitHub:</p>
+    <ul>
+      <li><a href="https://github.com/santana7o/olist-ecommerce-analytics">Olist: atraso x satisfação</a></li>
+      <li><a href="https://github.com/santana7o/energia-brasil-analytics">Energia no Brasil</a></li>
+      <li><a href="https://github.com/santana7o/varejo-online-sql">Varejo online em SQL</a></li>
+      <li><a href="https://github.com/santana7o/olist-knime-portfolio">Olist no KNIME</a></li>
+    </ul>
+  </div>
+</noscript>
+
+<script src="mundo.js"></script>
 <script>
-document.querySelectorAll('.idx tr[data-href]').forEach(function(tr){
-  tr.addEventListener('click',function(e){ if(e.target.closest('a')) return; location.hash=tr.dataset.href; });
-});
 (function(){
-  if(!('IntersectionObserver' in window)) return;
-  var links=[].slice.call(document.querySelectorAll('.side nav a, .topbar nav a'));
-  var bar=document.querySelector('.topbar');
-  var io=new IntersectionObserver(function(entries){
-    entries.forEach(function(en){
-      if(!en.isIntersecting) return;
-      var h='#'+en.target.id;
-      links.forEach(function(a){a.classList.toggle('on',a.getAttribute('href')===h)});
-      var t=bar.querySelector('nav a.on');
-      if(t && getComputedStyle(bar).display!=='none'){ var n=t.parentNode; n.scrollTo({left:t.offsetLeft-n.clientWidth/2+t.clientWidth/2,behavior:'smooth'}); }
-    });
-  },{rootMargin:'-40% 0px -55% 0px'});
-  ['projetos','olist','energia','varejo','knime','sobre'].forEach(function(id){ var s=document.getElementById(id); if(s) io.observe(s); });
+  var wrap=document.getElementById('wrap'), sheet=document.getElementById('sheet'), crumb=document.getElementById('crumb'), closeBtn=document.getElementById('close');
+  var arts=[].slice.call(document.querySelectorAll('.proj')), current=null, opener=null;
+  function open(id){
+    var a=arts.find(function(x){return x.dataset.id===id}); if(!a) return;
+    if(!current) opener=document.activeElement;
+    arts.forEach(function(x){x.hidden=x!==a});
+    current=id; wrap.hidden=false; sheet.scrollTop=0;
+    sheet.setAttribute('aria-labelledby','h-'+id);
+    crumb.style.setProperty('--c',getComputedStyle(a).getPropertyValue('--c'));
+    crumb.innerHTML='<i></i>'+a.dataset.name;
+    if(window.WORLD) WORLD.setOpen(true);
+    if(location.hash!=='#'+id) history.replaceState(null,'','#'+id);
+    closeBtn.focus({preventScroll:true});
+  }
+  function close(silent){
+    if(!current) return;
+    current=null; wrap.hidden=true;
+    if(window.WORLD) WORLD.setOpen(false);
+    history.replaceState(null,'',location.pathname+location.search);
+    if(!silent && opener && opener.focus) opener.focus({preventScroll:true});
+  }
+  window.SITE={open:open,close:close};
+  closeBtn.addEventListener('click',function(){close()});
+  wrap.querySelector('[data-close]').addEventListener('click',function(){close()});
+  document.addEventListener('click',function(e){
+    var o=e.target.closest('[data-open]'), s=e.target.closest('[data-sail]');
+    if(o){ var id=o.dataset.open; if(id!=='lista' && window.WORLD) WORLD.jumpTo(id); open(id); }
+    else if(s && window.WORLD){ WORLD.sailTo(s.dataset.sail,true); }
+  });
+  sheet.addEventListener('keydown',function(e){
+    if(e.key!=='Tab') return;
+    var f=[].slice.call(sheet.querySelectorAll('a[href],button:not([disabled])')).filter(function(x){return x.offsetParent!==null});
+    if(!f.length) return;
+    var first=f[0], last=f[f.length-1];
+    if(e.shiftKey && document.activeElement===first){e.preventDefault();last.focus()}
+    else if(!e.shiftKey && document.activeElement===last){e.preventDefault();first.focus()}
+  });
+  function fromHash(){
+    var h=location.hash.slice(1);
+    if(h && h!==current && arts.some(function(x){return x.dataset.id===h})){ if(h!=='lista' && window.WORLD) WORLD.jumpTo(h); open(h); }
+    else if(!h && current) close(true);
+  }
+  addEventListener('hashchange',fromHash);
+  fromHash();
 })();
 </script>
 </body>
