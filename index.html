@@ -138,6 +138,7 @@ footer p{color:var(--muted);font-size:14px;margin-top:6px}
     <ul>
       <li><a href="#olist">Olist</a></li>
       <li><a href="#energia">Energia</a></li>
+      <li><a href="#varejo">Varejo</a></li>
       <li><a href="#sobre">Sobre</a></li>
       <li><a href="#contato">Contato</a></li>
     </ul>
@@ -167,7 +168,7 @@ footer p{color:var(--muted);font-size:14px;margin-top:6px}
       <div class="step"><b>04</b><span>dbt + SQL</span><small>Staging, marts e testes de qualidade automáticos</small></div>
       <div class="step"><b>05</b><span>Tableau</span><small>Dashboard interativo com os achados e recomendações</small></div>
     </div>
-    <p class="note">Os dois projetos abaixo seguem a mesma arquitetura, orquestrada por um único <code>pipeline.py</code>, e têm o código completo no GitHub.</p>
+    <p class="note">Os projetos Olist e Energia seguem essa arquitetura, orquestrada por um único <code>pipeline.py</code>. O projeto de varejo é SQL-first: modelagem, testes e métricas em DuckDB puro, com dashboard web próprio. Todos têm o código completo no GitHub.</p>
   </div>
 </section>
 
@@ -273,6 +274,60 @@ footer p{color:var(--muted);font-size:14px;margin-top:6px}
       <figure class="shot"><img src="img/energia_reservatorios.jpg" width="1600" height="1001" alt="Dashboard Energia no Brasil, página Reservatórios" loading="lazy"></figure>
     </div>
     <figcaption>Páginas Matriz (geração por fonte) e Reservatórios (nível e chuva por região).</figcaption>
+
+    <div class="next"><span>Do setor elétrico ao varejo</span><a href="#varejo">Próximo: varejo online em SQL</a></div>
+  </div>
+</section>
+
+<section class="project" id="varejo">
+  <div class="wrap">
+    <div class="p-head">
+      <div>
+        <div class="p-num">PROJETO 03 · VAREJO</div>
+        <h2>O e-commerce está crescendo de forma saudável?</h2>
+        <p class="p-sub">1 milhão de linhas de vendas reais de um e-commerce de presentes do Reino Unido, de dez/2009 a dez/2011. A pergunta: de onde vem a receita, quais clientes sustentam o negócio e quanto vale reativar quem está sumindo.</p>
+        <div class="tags"><span class="tag">SQL</span><span class="tag">DuckDB</span><span class="tag">Python</span><span class="tag">Excel</span><span class="tag">GitHub Actions</span></div>
+      </div>
+      <div class="p-links">
+        <a class="btn solid" href="https://santana7o.github.io/varejo-online-sql/">Dashboard interativo</a>
+        <a class="btn" href="https://github.com/santana7o/varejo-online-sql">Código no GitHub</a>
+      </div>
+    </div>
+
+    <figure class="shot"><a href="https://santana7o.github.io/varejo-online-sql/"><img src="img/varejo_simulador.jpg" width="1040" height="514" alt="Simulador da campanha de reativação: 10 pontos percentuais a mais reativam 65 clientes e geram de 42 a 80 mil libras" loading="lazy"></a></figure>
+    <figcaption>Simulador do dashboard: quanto vale reativar os clientes "Em risco", com base no que eles fizeram no ano seguinte.</figcaption>
+
+    <div class="metrics">
+      <div class="metric"><div class="v">+2,5%</div><div class="l">de receita no ano 2, com 4% menos pedidos: o crescimento veio só do ticket médio</div></div>
+      <div class="metric"><div class="v">94%</div><div class="l">dos clientes Campeões voltaram no ano seguinte e geraram 68% da receita, validando a segmentação</div></div>
+      <div class="metric"><div class="v">£42-80 mil</div><div class="l">por ano a cada 10 pontos percentuais de reativação do segmento Em risco</div></div>
+    </div>
+
+    <div class="cols">
+      <div>
+        <h3>O que os dados mostram</h3>
+        <ul>
+          <li><strong>A aquisição caiu 36%:</strong> 600 clientes novos em set-nov/2011 contra 940 no ano anterior. Cerca de 90% da receita vem de quem já era cliente.</li>
+          <li><strong>22% dos clientes geram 64% da receita.</strong> A segmentação RFM foi aplicada em dez/2010 e comparada com o ano seguinte, e a ordem dos segmentos se manteve.</li>
+          <li><strong>Clientes "Em risco" voltam, mas gastam metade:</strong> 62% compraram de novo, com receita por cliente 47% menor.</li>
+          <li><strong>10 testes de dados e CI no GitHub Actions</strong> refazem tudo do zero a cada mudança e conferem se os resultados publicados batem com o SQL.</li>
+        </ul>
+      </div>
+      <div class="reco">
+        <h3>Recomendações</h3>
+        <ul>
+          <li>Campanha de reativação antes do pico de fim de ano, começando pelos 103 clientes que concentram metade da receita em risco.</li>
+          <li>Atendimento dedicado aos Campeões, com alerta após 30 dias sem compra.</li>
+          <li>Investigar a queda de aquisição antes que a base existente encolha.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="gallery">
+      <figure class="shot"><img src="img/varejo_validacao_rfm.jpg" width="1566" height="701" alt="Gráfico da receita por cliente de cada segmento RFM antes e depois de dez/2010" loading="lazy"></figure>
+      <figure class="shot"><img src="img/varejo_coortes.jpg" width="1528" height="775" alt="Mapa de calor da retenção mensal por coorte de primeira compra em 2010" loading="lazy"></figure>
+    </div>
+    <figcaption>À esquerda, a validação do RFM: receita por cliente antes e depois da segmentação. À direita, a retenção por coorte: quem entra no fim do ano volta no Natal seguinte.</figcaption>
 
     <div class="next"><span>Voltar ao primeiro projeto</span><a href="#olist">Olist: atraso x satisfação</a></div>
   </div>
