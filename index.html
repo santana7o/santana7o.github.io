@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Felipe Santana | Analista de Dados</title>
-<meta name="description" content="Portfólio de Felipe Santana, Analista de Dados em São Paulo. Projetos ponta a ponta com Python, SQL, dbt, DuckDB e Tableau.">
+<meta name="description" content="Portfólio de Felipe Santana, Analista de Dados em São Paulo. Projetos ponta a ponta com Python, SQL, dbt, DuckDB, Tableau e KNIME.">
 <meta property="og:title" content="Felipe Santana | Analista de Dados">
 <meta property="og:description" content="Projetos de dados ponta a ponta: da pergunta de negócio ao dashboard.">
 <meta property="og:image" content="https://santana7o.github.io/img/olist_visao_geral.jpg">
@@ -139,6 +139,7 @@ footer p{color:var(--muted);font-size:14px;margin-top:6px}
       <li><a href="#olist">Olist</a></li>
       <li><a href="#energia">Energia</a></li>
       <li><a href="#varejo">Varejo</a></li>
+      <li><a href="#knime">KNIME</a></li>
       <li><a href="#sobre">Sobre</a></li>
       <li><a href="#contato">Contato</a></li>
     </ul>
@@ -168,7 +169,7 @@ footer p{color:var(--muted);font-size:14px;margin-top:6px}
       <div class="step"><b>04</b><span>dbt + SQL</span><small>Staging, marts e testes de qualidade automáticos</small></div>
       <div class="step"><b>05</b><span>Tableau</span><small>Dashboard interativo com os achados e recomendações</small></div>
     </div>
-    <p class="note">Os projetos Olist e Energia seguem essa arquitetura, orquestrada por um único <code>pipeline.py</code>. O projeto de varejo é SQL-first: modelagem, testes e métricas em DuckDB puro, com dashboard web próprio. Todos têm o código completo no GitHub.</p>
+    <p class="note">Os projetos Olist e Energia seguem essa arquitetura, orquestrada por um único <code>pipeline.py</code>. O projeto de varejo é SQL-first: modelagem, testes e métricas em DuckDB puro, com dashboard web próprio. O projeto KNIME revisita os dados da Olist com segmentação e modelo preditivo, só com nós nativos. Todos têm o código completo no GitHub.</p>
   </div>
 </section>
 
@@ -329,6 +330,60 @@ footer p{color:var(--muted);font-size:14px;margin-top:6px}
     </div>
     <figcaption>À esquerda, a validação do RFM: receita por cliente antes e depois da segmentação. À direita, a retenção por coorte: quem entra no fim do ano volta no Natal seguinte.</figcaption>
 
+    <div class="next"><span>Mesmos dados da Olist, outra pergunta</span><a href="#knime">Próximo: segmentação e modelo no KNIME</a></div>
+  </div>
+</section>
+
+<section class="project" id="knime">
+  <div class="wrap">
+    <div class="p-head">
+      <div>
+        <div class="p-num">PROJETO 04 · E-COMMERCE · MACHINE LEARNING</div>
+        <h2>Dá para prever quem vai dar nota ruim?</h2>
+        <p class="p-sub">Os mesmos 96 mil pedidos da Olist, agora em quatro workflows do KNIME, só com nós nativos: ETL, segmentação RFM com k-Means, modelo de avaliação ruim e painel de indicadores. Aqui a definição de atraso foi corrigida (data contra data), e a taxa cai de 8,1% para 6,8%.</p>
+        <div class="tags"><span class="tag">KNIME</span><span class="tag">ETL</span><span class="tag">RFM</span><span class="tag">k-Means</span><span class="tag">Random Forest</span><span class="tag">Decision Tree</span></div>
+      </div>
+      <div class="p-links">
+        <a class="btn solid" href="https://github.com/santana7o/olist-knime-portfolio">Código no GitHub</a>
+        <a class="btn" href="https://github.com/santana7o/olist-knime-portfolio/releases">Baixar os workflows</a>
+      </div>
+    </div>
+
+    <figure class="shot"><img src="img/knime_avaliacao_antes.jpg" width="1600" height="900" alt="Gráfico mostrando que 74% dos pedidos atrasados foram avaliados antes da entrega, com 75% de notas ruins" loading="lazy"></figure>
+    <figcaption>O achado central: quem recebe com atraso avalia enquanto ainda espera o produto.</figcaption>
+
+    <div class="metrics">
+      <div class="metric"><div class="v">74%</div><div class="l">dos pedidos atrasados foram avaliados antes da entrega, e 75% dessas avaliações são ruins</div></div>
+      <div class="metric"><div class="v">31%</div><div class="l">da receita vem dos "Inativos de alto valor", 16% dos clientes que não compram há mais de um ano</div></div>
+      <div class="metric"><div class="v">8<em>x</em></div><div class="l">mais avaliações ruins encontradas pelo Random Forest do que pela regra "atrasou = ruim"</div></div>
+    </div>
+
+    <div class="cols">
+      <div>
+        <h3>O que os dados mostram</h3>
+        <ul>
+          <li><strong>A pesquisa de satisfação sai perto da data prometida.</strong> 94% das avaliações feitas antes da entrega foram criadas na data prometida ou depois dela.</li>
+          <li><strong>97% dos clientes compraram uma única vez.</strong> Por isso a frequência do RFM virou binária e o valor recebeu log antes do k-Means.</li>
+          <li><strong>Modelo sem vazamento:</strong> pedidos avaliados antes da entrega ficam de fora. O Random Forest sinaliza 15% dos pedidos e encontra 35% das notas ruins, com AUC de 0,66.</li>
+          <li><strong>Limiar escolhido na validação, métricas só no teste,</strong> com partição estratificada 60/20/20.</li>
+        </ul>
+      </div>
+      <div class="reco">
+        <h3>Recomendações</h3>
+        <ul>
+          <li>Disparar a pesquisa na entrega confirmada, e não na data prometida.</li>
+          <li>Avisar antes do prazo os clientes cujo pedido corre risco de atrasar.</li>
+          <li>Campanha de reativação para os Inativos de alto valor, com ticket médio de R$ 317.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="gallery">
+      <figure class="shot"><img src="img/knime_segmentos.jpg" width="1600" height="900" alt="Gráfico de barras da receita por segmento RFM" loading="lazy"></figure>
+      <figure class="shot"><img src="img/knime_workflow_modelo.jpg" width="1270" height="650" alt="Workflow do modelo de avaliação ruim no KNIME, com baseline, árvore de decisão e Random Forest" loading="lazy"></figure>
+    </div>
+    <figcaption>À esquerda, a receita por segmento RFM. À direita, o workflow do modelo no KNIME: baseline, árvore de decisão e Random Forest comparados no mesmo teste.</figcaption>
+
     <div class="next"><span>Voltar ao primeiro projeto</span><a href="#olist">Olist: atraso x satisfação</a></div>
   </div>
 </section>
@@ -345,8 +400,8 @@ footer p{color:var(--muted);font-size:14px;margin-top:6px}
       <div><dt>Dados</dt><dd>pandas, DuckDB</dd></div>
       <div><dt>Modelagem</dt><dd>dbt, modelo estrela</dd></div>
       <div><dt>Visualização</dt><dd>Tableau, Power BI</dd></div>
-      <div><dt>Ferramentas</dt><dd>Git, Colab, DBeaver</dd></div>
-      <div><dt>Também</dt><dd>Excel, ETL</dd></div>
+      <div><dt>Ferramentas</dt><dd>Git, Colab, DBeaver, KNIME</dd></div>
+      <div><dt>Também</dt><dd>Excel, ETL, machine learning</dd></div>
     </dl>
   </div>
 </section>
