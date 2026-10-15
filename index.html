@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Felipe Santana | Analista de Dados</title>
-<meta name="description" content="Portfólio de Felipe Santana, Analista de Dados em São Paulo. Navegue de barco pelas ilhas: cada ilha é um projeto de dados com Python, SQL, dbt, DuckDB, Databricks, PySpark, Tableau e KNIME.">
+<meta name="description" content="Portfólio de Felipe Santana, Analista de Dados em São Paulo. Navegue de barco pelas ilhas: cada ilha é um projeto de dados com Python, SQL, dbt, DuckDB, Databricks, PySpark, Kafka, Tableau e KNIME.">
 <meta property="og:title" content="Felipe Santana | Analista de Dados">
 <meta property="og:description" content="Um arquipélago em pixel art onde cada ilha é um projeto de dados.">
 <meta property="og:image" content="https://santana7o.github.io/img/olist_visao_geral.jpg">
@@ -42,6 +42,7 @@
   <button class="pbtn small alt" type="button" data-sail="varejo" style="--c:#e86a8a"><i></i>Ilha do Mercado</button>
   <button class="pbtn small alt" type="button" data-sail="knime" style="--c:#4f9a43"><i></i>Floresta Aleatória</button>
   <button class="pbtn small alt" type="button" data-sail="lakehouse" style="--c:#e0574b"><i></i>Ilha do Lakehouse</button>
+  <button class="pbtn small alt" type="button" data-sail="sptrans" style="--c:#8a63c9"><i></i>Ilha do Terminal</button>
   <button class="pbtn small alt" type="button" data-sail="sobre" style="--c:#f2c94c"><i></i>Ilha do Farol</button>
 </nav>
 
@@ -62,13 +63,14 @@
         <h2 id="h-lista">Todos os projetos</h2>
       </div>
       <div class="body">
-        <p class="lede">Cinco projetos ponta a ponta com dados públicos e reais, da pergunta de negócio à recomendação. Cada um tem o código completo no GitHub e pode ser reproduzido do zero.</p>
+        <p class="lede">Seis projetos ponta a ponta com dados públicos, da pergunta de negócio à recomendação. Cada um tem o código completo no GitHub e pode ser reproduzido do zero.</p>
         <div class="cards">
           <div class="pcard pbox" style="--c:#e8743b"><span class="tag">Porto Olist</span><h3 class="px">Atrasos na entrega derrubam a satisfação do cliente?</h3><p>96 mil pedidos da Olist. Python, DuckDB, dbt, SQL, Tableau.</p><p class="res">4,3 para 2,3<small>nota média de adiantado para 4 a 7 dias de atraso</small></p><div class="row"><button class="pbtn small" type="button" data-open="olist">Abrir projeto</button><button class="pbtn small alt" type="button" data-sail="olist">Navegar até a ilha</button></div></div>
           <div class="pcard pbox" style="--c:#49c2c9"><span class="tag">Ilha dos Ventos</span><h3 class="px">Por que a energia fica cara quando para de chover?</h3><p>240 mil registros horários do ONS. Python, DuckDB, dbt, SQL, Tableau.</p><p class="res">5,6x<small>mais cara com reservatório abaixo de 40%</small></p><div class="row"><button class="pbtn small" type="button" data-open="energia">Abrir projeto</button><button class="pbtn small alt" type="button" data-sail="energia">Navegar até a ilha</button></div></div>
           <div class="pcard pbox" style="--c:#e86a8a"><span class="tag">Ilha do Mercado</span><h3 class="px">O e-commerce está crescendo de forma saudável?</h3><p>1 milhão de linhas de vendas. SQL, DuckDB, Python, Excel, GitHub Actions.</p><p class="res">£42 a 80 mil<small>por ano a cada 10 p.p. de reativação de clientes</small></p><div class="row"><button class="pbtn small" type="button" data-open="varejo">Abrir projeto</button><button class="pbtn small alt" type="button" data-sail="varejo">Navegar até a ilha</button></div></div>
           <div class="pcard pbox" style="--c:#4f9a43"><span class="tag">Floresta Aleatória</span><h3 class="px">Dá para prever quem vai dar nota ruim?</h3><p>96 mil pedidos da Olist. KNIME, RFM, k-Means, Random Forest.</p><p class="res">74%<small>dos pedidos atrasados são avaliados antes de chegar</small></p><div class="row"><button class="pbtn small" type="button" data-open="knime">Abrir projeto</button><button class="pbtn small alt" type="button" data-sail="knime">Navegar até a ilha</button></div></div>
           <div class="pcard pbox" style="--c:#e0574b"><span class="tag">Ilha do Lakehouse</span><h3 class="px">Em quais estados o etanol compensa mais que a gasolina?</h3><p>950 mil coletas de preço da ANP. Databricks, PySpark, Delta Lake, Unity Catalog.</p><p class="res">10 estados<small>onde o etanol compensa na semana mais recente</small></p><div class="row"><button class="pbtn small" type="button" data-open="lakehouse">Abrir projeto</button><button class="pbtn small alt" type="button" data-sail="lakehouse">Navegar até a ilha</button></div></div>
+          <div class="pcard pbox" style="--c:#8a63c9"><span class="tag">Ilha do Terminal</span><h3 class="px">Onde estão os ônibus de São Paulo agora e a que velocidade andam?</h3><p>Posição GPS da frota da SPTrans, a cada 30 segundos. Python, Apache Kafka, PostgreSQL, Streamlit, Docker.</p><p class="res">4 de 4<small>ônibus parados fora de terminal detectados no sample de demonstração, sem falso alarme em terminal</small></p><div class="row"><button class="pbtn small" type="button" data-open="sptrans">Abrir projeto</button><button class="pbtn small alt" type="button" data-sail="sptrans">Navegar até a ilha</button></div></div>
         </div>
         <div class="next"><p>Quer saber mais sobre mim?</p><button class="pbtn" type="button" data-open="sobre">Ilha do Farol: sobre mim</button></div>
       </div>
@@ -284,6 +286,49 @@
           <figure><img src="img/lakehouse_pipeline.jpg" width="1440" height="812" loading="lazy" alt="Grafo do pipeline no Databricks: bronze_precos, silver_precos e três tabelas gold, todas concluídas"><figcaption>Pipeline Bronze → Silver → Gold rodando no Databricks.</figcaption></figure>
           <figure><img src="img/lakehouse_qualidade.jpg" width="1440" height="748" loading="lazy" alt="Painel de expectations da tabela silver_precos com as 5 regras e 0% de falhas"><figcaption>As 5 regras de qualidade da camada Silver.</figcaption></figure>
         </div>
+        <div class="next"><p>Próxima ilha: dados em tempo real, com Kafka.</p><button class="pbtn" type="button" data-sail="sptrans">Navegar até a Ilha do Terminal</button></div>
+      </div>
+    </article>
+
+    <!-- SPTRANS -->
+    <article class="proj" data-id="sptrans" data-name="Ilha do Terminal" style="--c:#8a63c9" hidden>
+      <div class="scene" data-postcard="sptrans"></div>
+      <div class="title">
+        <span class="tag">Ilha do Terminal · Streaming</span>
+        <h2 id="h-sptrans">Onde estão os ônibus de São Paulo agora e a que velocidade andam?</h2>
+      </div>
+      <div class="body">
+        <p class="lede">Pipeline de streaming que lê a posição GPS da frota da SPTrans (API Olho Vivo), publica cada leitura no Apache Kafka, calcula velocidade, métricas por linha em janelas de 5 minutos e alertas de ônibus parado, e mostra tudo em um dashboard ao vivo. Sobe com um comando (<code>make up</code>) e tem um modo de demonstração que não precisa de token.</p>
+        <ul class="chips"><li>Python</li><li>Apache Kafka</li><li>PostgreSQL</li><li>Streamlit</li><li>pydeck</li><li>Docker Compose</li><li>pytest</li></ul>
+        <div class="actions">
+          <a class="pbtn" href="https://github.com/santana7o/sptrans-kafka">Ver código no GitHub</a>
+          <a class="pbtn alt" href="https://github.com/santana7o/sptrans-kafka/blob/main/docs/arquitetura.md">Ler a arquitetura</a>
+        </div>
+        <div class="stats">
+          <div class="stat pbox"><b>319 testes</b><span>unitários e de pipeline, mais 6 testes ponta a ponta contra a stack completa no Docker</span></div>
+          <div class="stat pbox"><b>4 de 4</b><span>ônibus parados fora de terminal geram alerta no sample de demonstração; os 4 parados em terminais, nenhum</span></div>
+          <div class="stat pbox"><b>3 tópicos</b><span>no Kafka (posições, métricas e alertas) e 3 consumers que gravam no PostgreSQL</span></div>
+        </div>
+        <h3>O que o projeto mostra</h3>
+        <ul class="dots">
+          <li><strong>Tempo de evento, não do relógio.</strong> Velocidade (distância de haversine entre leituras), janelas e alertas usam o horário do GPS. Por isso o replay acelerado dá os mesmos resultados do tempo real.</li>
+          <li><strong>Offset só depois de gravar.</strong> Entrega at-least-once com banco idempotente: chave única por veículo e instante, upsert por janela e alerta com identificador determinístico.</li>
+          <li><strong>Mensagem ruim não derruba o serviço.</strong> Leitura malformada é registrada e ignorada; falha de Kafka ou PostgreSQL tem retry com backoff e encerramento limpo.</li>
+          <li><strong>Janelas com watermark por partição.</strong> Uma janela só fecha quando todas as partições passaram dela, então um consumer que atrasa não perde leituras.</li>
+          <li><strong>Reprodutível por qualquer pessoa.</strong> O modo replay reproduz um arquivo de coletas no mesmo formato da API, e o <code>make record</code> grava dados reais para usar no lugar do sample.</li>
+        </ul>
+        <div class="reco pbox">
+          <h3>Na prática</h3>
+          <ul class="dots">
+            <li>Quem clonar o repositório roda <code>make up</code> e vê o dashboard e o Kafka UI funcionando, sem token.</li>
+            <li>O sample versionado é sintético, então os números do dashboard em replay não representam a cidade real. Para dados reais, basta um token gratuito da SPTrans e <code>make live</code>.</li>
+          </ul>
+        </div>
+        <div class="pics">
+          <figure class="wide"><img src="img/sptrans_dashboard.jpg" width="800" height="563" loading="lazy" alt="Dashboard com 495 ônibus ativos, velocidade média da cidade e mapa ao vivo de São Paulo"><figcaption>Dashboard ao vivo: indicadores da cidade e posição dos ônibus.</figcaption></figure>
+          <figure><img src="img/sptrans_rankings.jpg" width="800" height="372" loading="lazy" alt="Rankings das 10 linhas mais lentas e das 10 mais rápidas na última janela de 5 minutos"><figcaption>Linhas mais lentas e mais rápidas da última janela.</figcaption></figure>
+          <figure><img src="img/sptrans_kafka_ui.jpg" width="800" height="270" loading="lazy" alt="Kafka UI com os tópicos bus-positions-raw, bus-metrics e bus-alerts"><figcaption>Os três tópicos no Kafka UI.</figcaption></figure>
+        </div>
         <div class="next"><p>Fim da rota. Que tal conhecer o capitão?</p><button class="pbtn" type="button" data-sail="sobre">Navegar até a Ilha do Farol</button></div>
       </div>
     </article>
@@ -315,8 +360,8 @@
           <div class="pbox"><dt>Dados</dt><dd>pandas, DuckDB, PySpark</dd></div>
           <div class="pbox"><dt>Modelagem</dt><dd>dbt, modelo estrela</dd></div>
           <div class="pbox"><dt>Visualização</dt><dd>Tableau, Power BI</dd></div>
-          <div class="pbox"><dt>Plataformas</dt><dd>Databricks, Git, KNIME, DBeaver</dd></div>
-          <div class="pbox"><dt>Também</dt><dd>Excel, ETL, machine learning</dd></div>
+          <div class="pbox"><dt>Plataformas</dt><dd>Databricks, Kafka, Git, KNIME, DBeaver</dd></div>
+          <div class="pbox"><dt>Também</dt><dd>Excel, ETL, streaming, machine learning</dd></div>
         </dl>
         <div class="next"><p>Comece pela primeira ilha.</p><button class="pbtn" type="button" data-sail="olist">Navegar até o Porto Olist</button></div>
       </div>
@@ -334,6 +379,7 @@
       <li><a href="https://github.com/santana7o/varejo-online-sql">Varejo online em SQL</a></li>
       <li><a href="https://github.com/santana7o/olist-knime-portfolio">Olist no KNIME</a></li>
       <li><a href="https://github.com/santana7o/lakehouse-combustiveis-br">Lakehouse de combustíveis no Databricks</a></li>
+      <li><a href="https://github.com/santana7o/sptrans-kafka">Ônibus de São Paulo em tempo real com Kafka</a></li>
     </ul>
   </div>
 </noscript>

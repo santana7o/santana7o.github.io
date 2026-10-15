@@ -231,6 +231,20 @@
     p('y', 4, 0, 6, 3); p('Y', 4, 2, 6, 1); p('Y', 8, 0, 2, 3);
   });
 
+  // Ilha do Terminal: onibus, ponto de parada e marcador de GPS
+  SPR.bus = draw(22, 11, function (p) {
+    p('f', 0, 1, 22, 7); p('F', 0, 7, 22, 1); p('P', 0, 5, 22, 1); p('M', 0, 0, 22, 1);
+    p('b', 1, 2, 3, 2); p('b', 5, 2, 3, 2); p('b', 9, 2, 3, 2); p('b', 13, 2, 3, 2); p('B', 18, 2, 3, 3);
+    p('y', 21, 6, 1, 1); p('k', 3, 8, 4, 3); p('k', 15, 8, 4, 3); p('M', 4, 9); p('M', 16, 9);
+  });
+  SPR.stop = draw(8, 15, function (p) {
+    p('S', 3, 4, 1, 11); p('u', 0, 0, 8, 5); p('f', 1, 1, 6, 3); p('u', 3, 2, 2, 1); p('k', 2, 14, 3, 1);
+  });
+  SPR.pin = draw(7, 11, function (p) {
+    p('R', 1, 0, 5, 1); p('r', 0, 1, 7, 5); p('R', 1, 6, 5, 1); p('r', 2, 6, 3, 2); p('r', 3, 8, 1, 2);
+    p('f', 2, 2, 3, 3); p('k', 3, 3, 1, 1);
+  });
+
   /* ---------- world ---------- */
   var ISL = [
     { id: 'sobre', name: 'Ilha do Farol', sub: 'Sobre mim', x: 300, y: 520, R: 46, seed: 1.3, dock: 0.3, col: '#f2c94c', ly: -48 },
@@ -238,7 +252,8 @@
     { id: 'knime', name: 'Floresta Aleatória', sub: 'Nota ruim e RFM no KNIME', x: 250, y: 190, R: 62, seed: 3.7, dock: Math.PI * 0.42, col: '#4f9a43', ly: -58 },
     { id: 'energia', name: 'Ilha dos Ventos', sub: 'Preço da energia', x: 1110, y: 500, R: 76, seed: 4.4, dock: Math.PI * 0.88, col: '#49c2c9', ly: -72 },
     { id: 'varejo', name: 'Ilha do Mercado', sub: 'Varejo online em SQL', x: 720, y: 700, R: 66, seed: 5.9, dock: -Math.PI * 0.62, col: '#e86a8a', ly: -58 },
-    { id: 'lakehouse', name: 'Ilha do Lakehouse', sub: 'Combustíveis no Databricks', x: 1140, y: 215, R: 62, seed: 6.6, dock: Math.PI * 0.72, col: '#e0574b', ly: -60 }
+    { id: 'lakehouse', name: 'Ilha do Lakehouse', sub: 'Combustíveis no Databricks', x: 1140, y: 215, R: 62, seed: 6.6, dock: Math.PI * 0.72, col: '#e0574b', ly: -60 },
+    { id: 'sptrans', name: 'Ilha do Terminal', sub: 'Ônibus de SP em tempo real', x: 440, y: 770, R: 62, seed: 8.2, dock: -Math.PI * 0.3, col: '#8a63c9', ly: -60 }
   ];
   var ROCKS = [
     { x: 980, y: 140, R: 16, seed: 7 }, { x: 470, y: 410, R: 11, seed: 8 }, { x: 1290, y: 820, R: 18, seed: 9 },
@@ -284,6 +299,11 @@
       { s: 'tank', x: 32, y: -8 }, { s: 'tank', x: 44, y: 4 }, { s: 'palm', x: -28, y: -24 },
       { s: 'pump', x: -32, y: 16 }, { s: 'pump', x: -22, y: 19 }, { s: 'layers', x: 8, y: 16 },
       { s: 'bush', x: 30, y: 22 }, { s: 'bush', x: -8, y: 27 }
+    ],
+    sptrans: [
+      { s: 'palm', x: -46, y: -2 }, { s: 'palm', x: 44, y: -8 }, { s: 'house', x: -2, y: -16 }, { s: 'stop', x: -30, y: 8 },
+      { s: 'bus', x: -8, y: 10 }, { s: 'bus', x: 22, y: 18 }, { s: 'pin', x: -34, y: -18 }, { s: 'pin', x: 28, y: -6 },
+      { s: 'pin', x: 10, y: 28 }, { s: 'nodeP', x: -22, y: 26 }, { s: 'nodeC', x: -8, y: 28 }, { s: 'bush', x: 40, y: 10 }
     ]
   };
   var WIRES = [[-38, 24, -24, 28], [-38, 24, -24, 16], [-24, 28, -10, 24], [-24, 16, -10, 24]];
